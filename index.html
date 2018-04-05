@@ -1,0 +1,1743 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Gelukkige verjaardag!</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-image: url('grid.png');
+}
+.item, .hint {
+  height: 18px;
+  width: 18px;
+  margin: 0;
+  padding: 0;
+}
+.hint {
+  position: absolute;
+  z-index: 0;
+}
+.row {
+  width: 450px;
+  height: 18px;
+  background-color: #f00;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: 0px solid #f00;
+  z-index: 1;
+}
+
+.column {
+  width: 18px;
+  height: 450px;
+  background-color: #0ff;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 0px solid #0ff;
+  z-index: 1;
+}
+</style>
+</head>
+
+<body>
+
+  <div class="hint" style="left: 540px; top: 36px; background-color: #000"></div>
+  <div class="hint" style="left: 540px; top: 54px; background-color: #000"></div>
+  <div class="hint" style="left: 540px; top: 72px; background-color: #000"></div>
+  <div class="hint" style="left: 540px; top: 90px; background-color: #000"></div>
+  <div class="hint" style="left: 540px; top: 108px; background-color: #000"></div>
+  <div class="hint" style="left: 540px; top: 126px; background-color: #000"></div>
+  <div class="hint" style="left: 540px; top: 144px; background-color: #000"></div>
+  <div class="hint" style="left: 540px; top: 162px; background-color: #fff"></div>
+  <div class="hint" style="left: 540px; top: 342px; background-color: #fff"></div>
+  <div class="hint" style="left: 540px; top: 360px; background-color: #000"></div>
+  <div class="hint" style="left: 540px; top: 378px; background-color: #000"></div>
+  <div class="hint" style="left: 540px; top: 396px; background-color: #000"></div>
+  <div class="hint" style="left: 540px; top: 414px; background-color: #000"></div>
+  <div class="hint" style="left: 540px; top: 432px; background-color: #000"></div>
+  <div class="hint" style="left: 540px; top: 450px; background-color: #000"></div>
+  <div class="hint" style="left: 540px; top: 468px; background-color: #000"></div>
+  <div class="hint" style="left: 558px; top: 36px; background-color: #000"></div>
+  <div class="hint" style="left: 558px; top: 54px; background-color: #fff"></div>
+  <div class="hint" style="left: 558px; top: 72px; background-color: #fff"></div>
+  <div class="hint" style="left: 558px; top: 90px; background-color: #fff"></div>
+  <div class="hint" style="left: 558px; top: 108px; background-color: #fff"></div>
+  <div class="hint" style="left: 558px; top: 126px; background-color: #fff"></div>
+  <div class="hint" style="left: 558px; top: 144px; background-color: #000"></div>
+  <div class="hint" style="left: 558px; top: 162px; background-color: #fff"></div>
+  <div class="hint" style="left: 558px; top: 342px; background-color: #fff"></div>
+  <div class="hint" style="left: 558px; top: 360px; background-color: #000"></div>
+  <div class="hint" style="left: 558px; top: 378px; background-color: #fff"></div>
+  <div class="hint" style="left: 558px; top: 396px; background-color: #fff"></div>
+  <div class="hint" style="left: 558px; top: 414px; background-color: #fff"></div>
+  <div class="hint" style="left: 558px; top: 432px; background-color: #fff"></div>
+  <div class="hint" style="left: 558px; top: 450px; background-color: #fff"></div>
+  <div class="hint" style="left: 558px; top: 468px; background-color: #000"></div>
+  <div class="hint" style="left: 576px; top: 36px; background-color: #000"></div>
+  <div class="hint" style="left: 576px; top: 54px; background-color: #fff"></div>
+  <div class="hint" style="left: 576px; top: 72px; background-color: #000"></div>
+  <div class="hint" style="left: 576px; top: 90px; background-color: #000"></div>
+  <div class="hint" style="left: 576px; top: 108px; background-color: #000"></div>
+  <div class="hint" style="left: 576px; top: 126px; background-color: #fff"></div>
+  <div class="hint" style="left: 576px; top: 144px; background-color: #000"></div>
+  <div class="hint" style="left: 576px; top: 162px; background-color: #fff"></div>
+  <div class="hint" style="left: 576px; top: 342px; background-color: #fff"></div>
+  <div class="hint" style="left: 576px; top: 360px; background-color: #000"></div>
+  <div class="hint" style="left: 576px; top: 378px; background-color: #fff"></div>
+  <div class="hint" style="left: 576px; top: 396px; background-color: #000"></div>
+  <div class="hint" style="left: 576px; top: 414px; background-color: #000"></div>
+  <div class="hint" style="left: 576px; top: 432px; background-color: #000"></div>
+  <div class="hint" style="left: 576px; top: 450px; background-color: #fff"></div>
+  <div class="hint" style="left: 576px; top: 468px; background-color: #000"></div>
+  <div class="hint" style="left: 594px; top: 36px; background-color: #000"></div>
+  <div class="hint" style="left: 594px; top: 54px; background-color: #fff"></div>
+  <div class="hint" style="left: 594px; top: 72px; background-color: #000"></div>
+  <div class="hint" style="left: 594px; top: 90px; background-color: #000"></div>
+  <div class="hint" style="left: 594px; top: 108px; background-color: #000"></div>
+  <div class="hint" style="left: 594px; top: 126px; background-color: #fff"></div>
+  <div class="hint" style="left: 594px; top: 144px; background-color: #000"></div>
+  <div class="hint" style="left: 594px; top: 162px; background-color: #fff"></div>
+  <div class="hint" style="left: 594px; top: 342px; background-color: #fff"></div>
+  <div class="hint" style="left: 594px; top: 360px; background-color: #000"></div>
+  <div class="hint" style="left: 594px; top: 378px; background-color: #fff"></div>
+  <div class="hint" style="left: 594px; top: 396px; background-color: #000"></div>
+  <div class="hint" style="left: 594px; top: 414px; background-color: #000"></div>
+  <div class="hint" style="left: 594px; top: 432px; background-color: #000"></div>
+  <div class="hint" style="left: 594px; top: 450px; background-color: #fff"></div>
+  <div class="hint" style="left: 594px; top: 468px; background-color: #000"></div>
+  <div class="hint" style="left: 612px; top: 36px; background-color: #000"></div>
+  <div class="hint" style="left: 612px; top: 54px; background-color: #fff"></div>
+  <div class="hint" style="left: 612px; top: 72px; background-color: #000"></div>
+  <div class="hint" style="left: 612px; top: 90px; background-color: #000"></div>
+  <div class="hint" style="left: 612px; top: 108px; background-color: #000"></div>
+  <div class="hint" style="left: 612px; top: 126px; background-color: #fff"></div>
+  <div class="hint" style="left: 612px; top: 144px; background-color: #000"></div>
+  <div class="hint" style="left: 612px; top: 162px; background-color: #fff"></div>
+  <div class="hint" style="left: 612px; top: 342px; background-color: #fff"></div>
+  <div class="hint" style="left: 612px; top: 360px; background-color: #000"></div>
+  <div class="hint" style="left: 612px; top: 378px; background-color: #fff"></div>
+  <div class="hint" style="left: 612px; top: 396px; background-color: #000"></div>
+  <div class="hint" style="left: 612px; top: 414px; background-color: #000"></div>
+  <div class="hint" style="left: 612px; top: 432px; background-color: #000"></div>
+  <div class="hint" style="left: 612px; top: 450px; background-color: #fff"></div>
+  <div class="hint" style="left: 612px; top: 468px; background-color: #000"></div>
+  <div class="hint" style="left: 630px; top: 36px; background-color: #000"></div>
+  <div class="hint" style="left: 630px; top: 54px; background-color: #fff"></div>
+  <div class="hint" style="left: 630px; top: 72px; background-color: #fff"></div>
+  <div class="hint" style="left: 630px; top: 90px; background-color: #fff"></div>
+  <div class="hint" style="left: 630px; top: 108px; background-color: #fff"></div>
+  <div class="hint" style="left: 630px; top: 126px; background-color: #fff"></div>
+  <div class="hint" style="left: 630px; top: 144px; background-color: #000"></div>
+  <div class="hint" style="left: 630px; top: 162px; background-color: #fff"></div>
+  <div class="hint" style="left: 630px; top: 342px; background-color: #fff"></div>
+  <div class="hint" style="left: 630px; top: 360px; background-color: #000"></div>
+  <div class="hint" style="left: 630px; top: 378px; background-color: #fff"></div>
+  <div class="hint" style="left: 630px; top: 396px; background-color: #fff"></div>
+  <div class="hint" style="left: 630px; top: 414px; background-color: #fff"></div>
+  <div class="hint" style="left: 630px; top: 432px; background-color: #fff"></div>
+  <div class="hint" style="left: 630px; top: 450px; background-color: #fff"></div>
+  <div class="hint" style="left: 630px; top: 468px; background-color: #000"></div>
+  <div class="hint" style="left: 648px; top: 36px; background-color: #000"></div>
+  <div class="hint" style="left: 648px; top: 54px; background-color: #000"></div>
+  <div class="hint" style="left: 648px; top: 72px; background-color: #000"></div>
+  <div class="hint" style="left: 648px; top: 90px; background-color: #000"></div>
+  <div class="hint" style="left: 648px; top: 108px; background-color: #000"></div>
+  <div class="hint" style="left: 648px; top: 126px; background-color: #000"></div>
+  <div class="hint" style="left: 648px; top: 144px; background-color: #000"></div>
+  <div class="hint" style="left: 648px; top: 162px; background-color: #fff"></div>
+  <div class="hint" style="left: 648px; top: 342px; background-color: #fff"></div>
+  <div class="hint" style="left: 648px; top: 360px; background-color: #000"></div>
+  <div class="hint" style="left: 648px; top: 378px; background-color: #000"></div>
+  <div class="hint" style="left: 648px; top: 396px; background-color: #000"></div>
+  <div class="hint" style="left: 648px; top: 414px; background-color: #000"></div>
+  <div class="hint" style="left: 648px; top: 432px; background-color: #000"></div>
+  <div class="hint" style="left: 648px; top: 450px; background-color: #000"></div>
+  <div class="hint" style="left: 648px; top: 468px; background-color: #000"></div>
+  <div class="hint" style="left: 666px; top: 36px; background-color: #fff"></div>
+  <div class="hint" style="left: 666px; top: 54px; background-color: #fff"></div>
+  <div class="hint" style="left: 666px; top: 72px; background-color: #fff"></div>
+  <div class="hint" style="left: 666px; top: 90px; background-color: #fff"></div>
+  <div class="hint" style="left: 666px; top: 108px; background-color: #fff"></div>
+  <div class="hint" style="left: 666px; top: 126px; background-color: #fff"></div>
+  <div class="hint" style="left: 666px; top: 144px; background-color: #fff"></div>
+  <div class="hint" style="left: 666px; top: 162px; background-color: #fff"></div>
+  <div class="hint" style="left: 666px; top: 342px; background-color: #fff"></div>
+  <div class="hint" style="left: 666px; top: 360px; background-color: #fff"></div>
+  <div class="hint" style="left: 666px; top: 378px; background-color: #fff"></div>
+  <div class="hint" style="left: 666px; top: 396px; background-color: #fff"></div>
+  <div class="hint" style="left: 666px; top: 414px; background-color: #fff"></div>
+  <div class="hint" style="left: 666px; top: 432px; background-color: #fff"></div>
+  <div class="hint" style="left: 666px; top: 450px; background-color: #fff"></div>
+  <div class="hint" style="left: 666px; top: 468px; background-color: #fff"></div>
+  <div class="hint" style="left: 828px; top: 324px; background-color: #000"></div>
+  <div class="hint" style="left: 828px; top: 342px; background-color: #000"></div>
+  <div class="hint" style="left: 828px; top: 360px; background-color: #000"></div>
+  <div class="hint" style="left: 828px; top: 378px; background-color: #000"></div>
+  <div class="hint" style="left: 828px; top: 396px; background-color: #000"></div>
+  <div class="hint" style="left: 846px; top: 36px; background-color: #fff"></div>
+  <div class="hint" style="left: 846px; top: 54px; background-color: #fff"></div>
+  <div class="hint" style="left: 846px; top: 72px; background-color: #fff"></div>
+  <div class="hint" style="left: 846px; top: 90px; background-color: #fff"></div>
+  <div class="hint" style="left: 846px; top: 108px; background-color: #fff"></div>
+  <div class="hint" style="left: 846px; top: 126px; background-color: #fff"></div>
+  <div class="hint" style="left: 846px; top: 144px; background-color: #fff"></div>
+  <div class="hint" style="left: 846px; top: 162px; background-color: #fff"></div>
+  <div class="hint" style="left: 846px; top: 324px; background-color: #000"></div>
+  <div class="hint" style="left: 846px; top: 342px; background-color: #fff"></div>
+  <div class="hint" style="left: 846px; top: 360px; background-color: #fff"></div>
+  <div class="hint" style="left: 846px; top: 378px; background-color: #fff"></div>
+  <div class="hint" style="left: 846px; top: 396px; background-color: #000"></div>
+  <div class="hint" style="left: 864px; top: 36px; background-color: #000"></div>
+  <div class="hint" style="left: 864px; top: 54px; background-color: #000"></div>
+  <div class="hint" style="left: 864px; top: 72px; background-color: #000"></div>
+  <div class="hint" style="left: 864px; top: 90px; background-color: #000"></div>
+  <div class="hint" style="left: 864px; top: 108px; background-color: #000"></div>
+  <div class="hint" style="left: 864px; top: 126px; background-color: #000"></div>
+  <div class="hint" style="left: 864px; top: 144px; background-color: #000"></div>
+  <div class="hint" style="left: 864px; top: 162px; background-color: #fff"></div>
+  <div class="hint" style="left: 864px; top: 324px; background-color: #000"></div>
+  <div class="hint" style="left: 864px; top: 342px; background-color: #fff"></div>
+  <div class="hint" style="left: 864px; top: 360px; background-color: #000"></div>
+  <div class="hint" style="left: 864px; top: 378px; background-color: #fff"></div>
+  <div class="hint" style="left: 864px; top: 396px; background-color: #000"></div>
+  <div class="hint" style="left: 882px; top: 36px; background-color: #000"></div>
+  <div class="hint" style="left: 882px; top: 54px; background-color: #fff"></div>
+  <div class="hint" style="left: 882px; top: 72px; background-color: #fff"></div>
+  <div class="hint" style="left: 882px; top: 90px; background-color: #fff"></div>
+  <div class="hint" style="left: 882px; top: 108px; background-color: #fff"></div>
+  <div class="hint" style="left: 882px; top: 126px; background-color: #fff"></div>
+  <div class="hint" style="left: 882px; top: 144px; background-color: #000"></div>
+  <div class="hint" style="left: 882px; top: 162px; background-color: #fff"></div>
+  <div class="hint" style="left: 882px; top: 324px; background-color: #000"></div>
+  <div class="hint" style="left: 882px; top: 342px; background-color: #fff"></div>
+  <div class="hint" style="left: 882px; top: 360px; background-color: #fff"></div>
+  <div class="hint" style="left: 882px; top: 378px; background-color: #fff"></div>
+  <div class="hint" style="left: 882px; top: 396px; background-color: #000"></div>
+  <div class="hint" style="left: 900px; top: 36px; background-color: #000"></div>
+  <div class="hint" style="left: 900px; top: 54px; background-color: #fff"></div>
+  <div class="hint" style="left: 900px; top: 72px; background-color: #000"></div>
+  <div class="hint" style="left: 900px; top: 90px; background-color: #000"></div>
+  <div class="hint" style="left: 900px; top: 108px; background-color: #000"></div>
+  <div class="hint" style="left: 900px; top: 126px; background-color: #fff"></div>
+  <div class="hint" style="left: 900px; top: 144px; background-color: #000"></div>
+  <div class="hint" style="left: 900px; top: 162px; background-color: #fff"></div>
+  <div class="hint" style="left: 900px; top: 324px; background-color: #000"></div>
+  <div class="hint" style="left: 900px; top: 342px; background-color: #000"></div>
+  <div class="hint" style="left: 900px; top: 360px; background-color: #000"></div>
+  <div class="hint" style="left: 900px; top: 378px; background-color: #000"></div>
+  <div class="hint" style="left: 900px; top: 396px; background-color: #000"></div>
+  <div class="hint" style="left: 918px; top: 36px; background-color: #000"></div>
+  <div class="hint" style="left: 918px; top: 54px; background-color: #fff"></div>
+  <div class="hint" style="left: 918px; top: 72px; background-color: #000"></div>
+  <div class="hint" style="left: 918px; top: 90px; background-color: #000"></div>
+  <div class="hint" style="left: 918px; top: 108px; background-color: #000"></div>
+  <div class="hint" style="left: 918px; top: 126px; background-color: #fff"></div>
+  <div class="hint" style="left: 918px; top: 144px; background-color: #000"></div>
+  <div class="hint" style="left: 918px; top: 162px; background-color: #fff"></div>
+  <div class="hint" style="left: 936px; top: 36px; background-color: #000"></div>
+  <div class="hint" style="left: 936px; top: 54px; background-color: #fff"></div>
+  <div class="hint" style="left: 936px; top: 72px; background-color: #000"></div>
+  <div class="hint" style="left: 936px; top: 90px; background-color: #000"></div>
+  <div class="hint" style="left: 936px; top: 108px; background-color: #000"></div>
+  <div class="hint" style="left: 936px; top: 126px; background-color: #fff"></div>
+  <div class="hint" style="left: 936px; top: 144px; background-color: #000"></div>
+  <div class="hint" style="left: 936px; top: 162px; background-color: #fff"></div>
+  <div class="hint" style="left: 954px; top: 36px; background-color: #000"></div>
+  <div class="hint" style="left: 954px; top: 54px; background-color: #fff"></div>
+  <div class="hint" style="left: 954px; top: 72px; background-color: #fff"></div>
+  <div class="hint" style="left: 954px; top: 90px; background-color: #fff"></div>
+  <div class="hint" style="left: 954px; top: 108px; background-color: #fff"></div>
+  <div class="hint" style="left: 954px; top: 126px; background-color: #fff"></div>
+  <div class="hint" style="left: 954px; top: 144px; background-color: #000"></div>
+  <div class="hint" style="left: 954px; top: 162px; background-color: #fff"></div>
+  <div class="hint" style="left: 972px; top: 36px; background-color: #000"></div>
+  <div class="hint" style="left: 972px; top: 54px; background-color: #000"></div>
+  <div class="hint" style="left: 972px; top: 72px; background-color: #000"></div>
+  <div class="hint" style="left: 972px; top: 90px; background-color: #000"></div>
+  <div class="hint" style="left: 972px; top: 108px; background-color: #000"></div>
+  <div class="hint" style="left: 972px; top: 126px; background-color: #000"></div>
+  <div class="hint" style="left: 972px; top: 144px; background-color: #000"></div>
+  <div class="hint" style="left: 972px; top: 162px; background-color: #fff"></div>
+  <div id="row0" class="row" style="left: 36px; top: 36px;">
+  <div id="item0" class="item" style="background-color: #fff;"></div>
+  <div id="item1" class="item" style="background-color: #fff;"></div>
+  <div id="item2" class="item" style="background-color: #fff;"></div>
+  <div id="item3" class="item" style="background-color: #000;"></div>
+  <div id="item4" class="item" style="background-color: #fff;"></div>
+  <div id="item5" class="item" style="background-color: #000;"></div>
+  <div id="item6" class="item" style="background-color: #fff;"></div>
+  <div id="item7" class="item" style="background-color: #fff;"></div>
+  <div id="item8" class="item" style="background-color: #000;"></div>
+  <div id="item9" class="item" style="background-color: #fff;"></div>
+  <div id="item10" class="item" style="background-color: #fff;"></div>
+  <div id="item11" class="item" style="background-color: #000;"></div>
+  <div id="item12" class="item" style="background-color: #000;"></div>
+  <div id="item13" class="item" style="background-color: #fff;"></div>
+  <div id="item14" class="item" style="background-color: #000;"></div>
+  <div id="item15" class="item" style="background-color: #000;"></div>
+  <div id="item16" class="item" style="background-color: #fff;"></div>
+  <div id="item17" class="item" style="background-color: #fff;"></div>
+  <div id="item18" class="item" style="background-color: #fff;"></div>
+  <div id="item19" class="item" style="background-color: #fff;"></div>
+  <div id="item20" class="item" style="background-color: #000;"></div>
+  <div id="item21" class="item" style="background-color: #000;"></div>
+  <div id="item22" class="item" style="background-color: #fff;"></div>
+  <div id="item23" class="item" style="background-color: #fff;"></div>
+  <div id="item24" class="item" style="background-color: #fff;"></div>
+  </div>
+  <div id="row1" class="row" style="left: 36px; top: 54px;">
+  <div id="item0" class="item" style="background-color: #000;"></div>
+  <div id="item1" class="item" style="background-color: #fff;"></div>
+  <div id="item2" class="item" style="background-color: #fff;"></div>
+  <div id="item3" class="item" style="background-color: #fff;"></div>
+  <div id="item4" class="item" style="background-color: #fff;"></div>
+  <div id="item5" class="item" style="background-color: #fff;"></div>
+  <div id="item6" class="item" style="background-color: #000;"></div>
+  <div id="item7" class="item" style="background-color: #fff;"></div>
+  <div id="item8" class="item" style="background-color: #fff;"></div>
+  <div id="item9" class="item" style="background-color: #000;"></div>
+  <div id="item10" class="item" style="background-color: #fff;"></div>
+  <div id="item11" class="item" style="background-color: #fff;"></div>
+  <div id="item12" class="item" style="background-color: #000;"></div>
+  <div id="item13" class="item" style="background-color: #fff;"></div>
+  <div id="item14" class="item" style="background-color: #000;"></div>
+  <div id="item15" class="item" style="background-color: #fff;"></div>
+  <div id="item16" class="item" style="background-color: #000;"></div>
+  <div id="item17" class="item" style="background-color: #fff;"></div>
+  <div id="item18" class="item" style="background-color: #000;"></div>
+  <div id="item19" class="item" style="background-color: #fff;"></div>
+  <div id="item20" class="item" style="background-color: #fff;"></div>
+  <div id="item21" class="item" style="background-color: #fff;"></div>
+  <div id="item22" class="item" style="background-color: #fff;"></div>
+  <div id="item23" class="item" style="background-color: #fff;"></div>
+  <div id="item24" class="item" style="background-color: #000;"></div>
+  </div>
+  <div id="row2" class="row" style="left: 36px; top: 72px;">
+  <div id="item0" class="item" style="background-color: #fff;"></div>
+  <div id="item1" class="item" style="background-color: #fff;"></div>
+  <div id="item2" class="item" style="background-color: #fff;"></div>
+  <div id="item3" class="item" style="background-color: #fff;"></div>
+  <div id="item4" class="item" style="background-color: #fff;"></div>
+  <div id="item5" class="item" style="background-color: #fff;"></div>
+  <div id="item6" class="item" style="background-color: #fff;"></div>
+  <div id="item7" class="item" style="background-color: #fff;"></div>
+  <div id="item8" class="item" style="background-color: #000;"></div>
+  <div id="item9" class="item" style="background-color: #fff;"></div>
+  <div id="item10" class="item" style="background-color: #000;"></div>
+  <div id="item11" class="item" style="background-color: #fff;"></div>
+  <div id="item12" class="item" style="background-color: #fff;"></div>
+  <div id="item13" class="item" style="background-color: #fff;"></div>
+  <div id="item14" class="item" style="background-color: #000;"></div>
+  <div id="item15" class="item" style="background-color: #fff;"></div>
+  <div id="item16" class="item" style="background-color: #000;"></div>
+  <div id="item17" class="item" style="background-color: #fff;"></div>
+  <div id="item18" class="item" style="background-color: #fff;"></div>
+  <div id="item19" class="item" style="background-color: #fff;"></div>
+  <div id="item20" class="item" style="background-color: #000;"></div>
+  <div id="item21" class="item" style="background-color: #000;"></div>
+  <div id="item22" class="item" style="background-color: #000;"></div>
+  <div id="item23" class="item" style="background-color: #fff;"></div>
+  <div id="item24" class="item" style="background-color: #000;"></div>
+  </div>
+  <div id="row3" class="row" style="left: 36px; top: 90px;">
+  <div id="item0" class="item" style="background-color: #000;"></div>
+  <div id="item1" class="item" style="background-color: #fff;"></div>
+  <div id="item2" class="item" style="background-color: #000;"></div>
+  <div id="item3" class="item" style="background-color: #000;"></div>
+  <div id="item4" class="item" style="background-color: #000;"></div>
+  <div id="item5" class="item" style="background-color: #fff;"></div>
+  <div id="item6" class="item" style="background-color: #000;"></div>
+  <div id="item7" class="item" style="background-color: #fff;"></div>
+  <div id="item8" class="item" style="background-color: #fff;"></div>
+  <div id="item9" class="item" style="background-color: #000;"></div>
+  <div id="item10" class="item" style="background-color: #fff;"></div>
+  <div id="item11" class="item" style="background-color: #fff;"></div>
+  <div id="item12" class="item" style="background-color: #000;"></div>
+  <div id="item13" class="item" style="background-color: #fff;"></div>
+  <div id="item14" class="item" style="background-color: #fff;"></div>
+  <div id="item15" class="item" style="background-color: #000;"></div>
+  <div id="item16" class="item" style="background-color: #000;"></div>
+  <div id="item17" class="item" style="background-color: #000;"></div>
+  <div id="item18" class="item" style="background-color: #000;"></div>
+  <div id="item19" class="item" style="background-color: #000;"></div>
+  <div id="item20" class="item" style="background-color: #000;"></div>
+  <div id="item21" class="item" style="background-color: #000;"></div>
+  <div id="item22" class="item" style="background-color: #fff;"></div>
+  <div id="item23" class="item" style="background-color: #000;"></div>
+  <div id="item24" class="item" style="background-color: #fff;"></div>
+  </div>
+  <div id="row4" class="row" style="left: 36px; top: 108px;">
+  <div id="item0" class="item" style="background-color: #000;"></div>
+  <div id="item1" class="item" style="background-color: #000;"></div>
+  <div id="item2" class="item" style="background-color: #000;"></div>
+  <div id="item3" class="item" style="background-color: #000;"></div>
+  <div id="item4" class="item" style="background-color: #000;"></div>
+  <div id="item5" class="item" style="background-color: #000;"></div>
+  <div id="item6" class="item" style="background-color: #000;"></div>
+  <div id="item7" class="item" style="background-color: #fff;"></div>
+  <div id="item8" class="item" style="background-color: #000;"></div>
+  <div id="item9" class="item" style="background-color: #fff;"></div>
+  <div id="item10" class="item" style="background-color: #000;"></div>
+  <div id="item11" class="item" style="background-color: #fff;"></div>
+  <div id="item12" class="item" style="background-color: #000;"></div>
+  <div id="item13" class="item" style="background-color: #fff;"></div>
+  <div id="item14" class="item" style="background-color: #000;"></div>
+  <div id="item15" class="item" style="background-color: #fff;"></div>
+  <div id="item16" class="item" style="background-color: #000;"></div>
+  <div id="item17" class="item" style="background-color: #fff;"></div>
+  <div id="item18" class="item" style="background-color: #000;"></div>
+  <div id="item19" class="item" style="background-color: #000;"></div>
+  <div id="item20" class="item" style="background-color: #000;"></div>
+  <div id="item21" class="item" style="background-color: #000;"></div>
+  <div id="item22" class="item" style="background-color: #000;"></div>
+  <div id="item23" class="item" style="background-color: #000;"></div>
+  <div id="item24" class="item" style="background-color: #000;"></div>
+  </div>
+  <div id="row5" class="row" style="left: 36px; top: 126px;">
+  <div id="item0" class="item" style="background-color: #000;"></div>
+  <div id="item1" class="item" style="background-color: #000;"></div>
+  <div id="item2" class="item" style="background-color: #000;"></div>
+  <div id="item3" class="item" style="background-color: #000;"></div>
+  <div id="item4" class="item" style="background-color: #000;"></div>
+  <div id="item5" class="item" style="background-color: #000;"></div>
+  <div id="item6" class="item" style="background-color: #000;"></div>
+  <div id="item7" class="item" style="background-color: #fff;"></div>
+  <div id="item8" class="item" style="background-color: #000;"></div>
+  <div id="item9" class="item" style="background-color: #fff;"></div>
+  <div id="item10" class="item" style="background-color: #fff;"></div>
+  <div id="item11" class="item" style="background-color: #fff;"></div>
+  <div id="item12" class="item" style="background-color: #fff;"></div>
+  <div id="item13" class="item" style="background-color: #000;"></div>
+  <div id="item14" class="item" style="background-color: #000;"></div>
+  <div id="item15" class="item" style="background-color: #fff;"></div>
+  <div id="item16" class="item" style="background-color: #fff;"></div>
+  <div id="item17" class="item" style="background-color: #fff;"></div>
+  <div id="item18" class="item" style="background-color: #000;"></div>
+  <div id="item19" class="item" style="background-color: #000;"></div>
+  <div id="item20" class="item" style="background-color: #000;"></div>
+  <div id="item21" class="item" style="background-color: #000;"></div>
+  <div id="item22" class="item" style="background-color: #000;"></div>
+  <div id="item23" class="item" style="background-color: #000;"></div>
+  <div id="item24" class="item" style="background-color: #000;"></div>
+  </div>
+  <div id="row6" class="row" style="left: 36px; top: 144px;">
+  <div id="item0" class="item" style="background-color: #000;"></div>
+  <div id="item1" class="item" style="background-color: #000;"></div>
+  <div id="item2" class="item" style="background-color: #000;"></div>
+  <div id="item3" class="item" style="background-color: #000;"></div>
+  <div id="item4" class="item" style="background-color: #000;"></div>
+  <div id="item5" class="item" style="background-color: #000;"></div>
+  <div id="item6" class="item" style="background-color: #000;"></div>
+  <div id="item7" class="item" style="background-color: #fff;"></div>
+  <div id="item8" class="item" style="background-color: #000;"></div>
+  <div id="item9" class="item" style="background-color: #fff;"></div>
+  <div id="item10" class="item" style="background-color: #000;"></div>
+  <div id="item11" class="item" style="background-color: #fff;"></div>
+  <div id="item12" class="item" style="background-color: #000;"></div>
+  <div id="item13" class="item" style="background-color: #fff;"></div>
+  <div id="item14" class="item" style="background-color: #fff;"></div>
+  <div id="item15" class="item" style="background-color: #000;"></div>
+  <div id="item16" class="item" style="background-color: #000;"></div>
+  <div id="item17" class="item" style="background-color: #fff;"></div>
+  <div id="item18" class="item" style="background-color: #fff;"></div>
+  <div id="item19" class="item" style="background-color: #000;"></div>
+  <div id="item20" class="item" style="background-color: #000;"></div>
+  <div id="item21" class="item" style="background-color: #000;"></div>
+  <div id="item22" class="item" style="background-color: #fff;"></div>
+  <div id="item23" class="item" style="background-color: #fff;"></div>
+  <div id="item24" class="item" style="background-color: #000;"></div>
+  </div>
+  <div id="row7" class="row" style="left: 36px; top: 162px;">
+  <div id="item0" class="item" style="background-color: #000;"></div>
+  <div id="item1" class="item" style="background-color: #000;"></div>
+  <div id="item2" class="item" style="background-color: #fff;"></div>
+  <div id="item3" class="item" style="background-color: #fff;"></div>
+  <div id="item4" class="item" style="background-color: #fff;"></div>
+  <div id="item5" class="item" style="background-color: #fff;"></div>
+  <div id="item6" class="item" style="background-color: #000;"></div>
+  <div id="item7" class="item" style="background-color: #fff;"></div>
+  <div id="item8" class="item" style="background-color: #fff;"></div>
+  <div id="item9" class="item" style="background-color: #000;"></div>
+  <div id="item10" class="item" style="background-color: #fff;"></div>
+  <div id="item11" class="item" style="background-color: #fff;"></div>
+  <div id="item12" class="item" style="background-color: #000;"></div>
+  <div id="item13" class="item" style="background-color: #fff;"></div>
+  <div id="item14" class="item" style="background-color: #fff;"></div>
+  <div id="item15" class="item" style="background-color: #000;"></div>
+  <div id="item16" class="item" style="background-color: #000;"></div>
+  <div id="item17" class="item" style="background-color: #000;"></div>
+  <div id="item18" class="item" style="background-color: #000;"></div>
+  <div id="item19" class="item" style="background-color: #000;"></div>
+  <div id="item20" class="item" style="background-color: #000;"></div>
+  <div id="item21" class="item" style="background-color: #000;"></div>
+  <div id="item22" class="item" style="background-color: #fff;"></div>
+  <div id="item23" class="item" style="background-color: #fff;"></div>
+  <div id="item24" class="item" style="background-color: #000;"></div>
+  </div>
+  <div id="row8" class="row" style="left: 36px; top: 180px;">
+  <div id="item0" class="item" style="background-color: #000;"></div>
+  <div id="item1" class="item" style="background-color: #fff;"></div>
+  <div id="item2" class="item" style="background-color: #fff;"></div>
+  <div id="item3" class="item" style="background-color: #000;"></div>
+  <div id="item4" class="item" style="background-color: #000;"></div>
+  <div id="item5" class="item" style="background-color: #fff;"></div>
+  <div id="item6" class="item" style="background-color: #000;"></div>
+  <div id="item7" class="item" style="background-color: #fff;"></div>
+  <div id="item8" class="item" style="background-color: #000;"></div>
+  <div id="item9" class="item" style="background-color: #000;"></div>
+  <div id="item10" class="item" style="background-color: #fff;"></div>
+  <div id="item11" class="item" style="background-color: #fff;"></div>
+  <div id="item12" class="item" style="background-color: #fff;"></div>
+  <div id="item13" class="item" style="background-color: #fff;"></div>
+  <div id="item14" class="item" style="background-color: #fff;"></div>
+  <div id="item15" class="item" style="background-color: #000;"></div>
+  <div id="item16" class="item" style="background-color: #fff;"></div>
+  <div id="item17" class="item" style="background-color: #fff;"></div>
+  <div id="item18" class="item" style="background-color: #000;"></div>
+  <div id="item19" class="item" style="background-color: #fff;"></div>
+  <div id="item20" class="item" style="background-color: #000;"></div>
+  <div id="item21" class="item" style="background-color: #fff;"></div>
+  <div id="item22" class="item" style="background-color: #000;"></div>
+  <div id="item23" class="item" style="background-color: #fff;"></div>
+  <div id="item24" class="item" style="background-color: #000;"></div>
+  </div>
+  <div id="row9" class="row" style="left: 36px; top: 198px;">
+  <div id="item0" class="item" style="background-color: #000;"></div>
+  <div id="item1" class="item" style="background-color: #fff;"></div>
+  <div id="item2" class="item" style="background-color: #000;"></div>
+  <div id="item3" class="item" style="background-color: #000;"></div>
+  <div id="item4" class="item" style="background-color: #000;"></div>
+  <div id="item5" class="item" style="background-color: #fff;"></div>
+  <div id="item6" class="item" style="background-color: #000;"></div>
+  <div id="item7" class="item" style="background-color: #fff;"></div>
+  <div id="item8" class="item" style="background-color: #fff;"></div>
+  <div id="item9" class="item" style="background-color: #fff;"></div>
+  <div id="item10" class="item" style="background-color: #000;"></div>
+  <div id="item11" class="item" style="background-color: #000;"></div>
+  <div id="item12" class="item" style="background-color: #000;"></div>
+  <div id="item13" class="item" style="background-color: #fff;"></div>
+  <div id="item14" class="item" style="background-color: #000;"></div>
+  <div id="item15" class="item" style="background-color: #fff;"></div>
+  <div id="item16" class="item" style="background-color: #000;"></div>
+  <div id="item17" class="item" style="background-color: #000;"></div>
+  <div id="item18" class="item" style="background-color: #fff;"></div>
+  <div id="item19" class="item" style="background-color: #fff;"></div>
+  <div id="item20" class="item" style="background-color: #000;"></div>
+  <div id="item21" class="item" style="background-color: #fff;"></div>
+  <div id="item22" class="item" style="background-color: #000;"></div>
+  <div id="item23" class="item" style="background-color: #000;"></div>
+  <div id="item24" class="item" style="background-color: #fff;"></div>
+  </div>
+  <div id="row10" class="row" style="left: 36px; top: 216px;">
+  <div id="item0" class="item" style="background-color: #000;"></div>
+  <div id="item1" class="item" style="background-color: #fff;"></div>
+  <div id="item2" class="item" style="background-color: #000;"></div>
+  <div id="item3" class="item" style="background-color: #000;"></div>
+  <div id="item4" class="item" style="background-color: #000;"></div>
+  <div id="item5" class="item" style="background-color: #fff;"></div>
+  <div id="item6" class="item" style="background-color: #000;"></div>
+  <div id="item7" class="item" style="background-color: #fff;"></div>
+  <div id="item8" class="item" style="background-color: #000;"></div>
+  <div id="item9" class="item" style="background-color: #000;"></div>
+  <div id="item10" class="item" style="background-color: #000;"></div>
+  <div id="item11" class="item" style="background-color: #000;"></div>
+  <div id="item12" class="item" style="background-color: #fff;"></div>
+  <div id="item13" class="item" style="background-color: #fff;"></div>
+  <div id="item14" class="item" style="background-color: #000;"></div>
+  <div id="item15" class="item" style="background-color: #fff;"></div>
+  <div id="item16" class="item" style="background-color: #fff;"></div>
+  <div id="item17" class="item" style="background-color: #fff;"></div>
+  <div id="item18" class="item" style="background-color: #fff;"></div>
+  <div id="item19" class="item" style="background-color: #fff;"></div>
+  <div id="item20" class="item" style="background-color: #000;"></div>
+  <div id="item21" class="item" style="background-color: #fff;"></div>
+  <div id="item22" class="item" style="background-color: #000;"></div>
+  <div id="item23" class="item" style="background-color: #000;"></div>
+  <div id="item24" class="item" style="background-color: #000;"></div>
+  </div>
+  <div id="row11" class="row" style="left: 36px; top: 234px;">
+  <div id="item0" class="item" style="background-color: #fff;"></div>
+  <div id="item1" class="item" style="background-color: #000;"></div>
+  <div id="item2" class="item" style="background-color: #000;"></div>
+  <div id="item3" class="item" style="background-color: #fff;"></div>
+  <div id="item4" class="item" style="background-color: #fff;"></div>
+  <div id="item5" class="item" style="background-color: #000;"></div>
+  <div id="item6" class="item" style="background-color: #000;"></div>
+  <div id="item7" class="item" style="background-color: #000;"></div>
+  <div id="item8" class="item" style="background-color: #000;"></div>
+  <div id="item9" class="item" style="background-color: #fff;"></div>
+  <div id="item10" class="item" style="background-color: #fff;"></div>
+  <div id="item11" class="item" style="background-color: #000;"></div>
+  <div id="item12" class="item" style="background-color: #000;"></div>
+  <div id="item13" class="item" style="background-color: #fff;"></div>
+  <div id="item14" class="item" style="background-color: #fff;"></div>
+  <div id="item15" class="item" style="background-color: #fff;"></div>
+  <div id="item16" class="item" style="background-color: #000;"></div>
+  <div id="item17" class="item" style="background-color: #fff;"></div>
+  <div id="item18" class="item" style="background-color: #000;"></div>
+  <div id="item19" class="item" style="background-color: #000;"></div>
+  <div id="item20" class="item" style="background-color: #fff;"></div>
+  <div id="item21" class="item" style="background-color: #000;"></div>
+  <div id="item22" class="item" style="background-color: #fff;"></div>
+  <div id="item23" class="item" style="background-color: #000;"></div>
+  <div id="item24" class="item" style="background-color: #000;"></div>
+  </div>
+  <div id="row12" class="row" style="left: 36px; top: 252px;">
+  <div id="item0" class="item" style="background-color: #000;"></div>
+  <div id="item1" class="item" style="background-color: #fff;"></div>
+  <div id="item2" class="item" style="background-color: #000;"></div>
+  <div id="item3" class="item" style="background-color: #000;"></div>
+  <div id="item4" class="item" style="background-color: #000;"></div>
+  <div id="item5" class="item" style="background-color: #fff;"></div>
+  <div id="item6" class="item" style="background-color: #000;"></div>
+  <div id="item7" class="item" style="background-color: #fff;"></div>
+  <div id="item8" class="item" style="background-color: #fff;"></div>
+  <div id="item9" class="item" style="background-color: #000;"></div>
+  <div id="item10" class="item" style="background-color: #000;"></div>
+  <div id="item11" class="item" style="background-color: #000;"></div>
+  <div id="item12" class="item" style="background-color: #fff;"></div>
+  <div id="item13" class="item" style="background-color: #000;"></div>
+  <div id="item14" class="item" style="background-color: #000;"></div>
+  <div id="item15" class="item" style="background-color: #000;"></div>
+  <div id="item16" class="item" style="background-color: #fff;"></div>
+  <div id="item17" class="item" style="background-color: #fff;"></div>
+  <div id="item18" class="item" style="background-color: #000;"></div>
+  <div id="item19" class="item" style="background-color: #fff;"></div>
+  <div id="item20" class="item" style="background-color: #000;"></div>
+  <div id="item21" class="item" style="background-color: #000;"></div>
+  <div id="item22" class="item" style="background-color: #000;"></div>
+  <div id="item23" class="item" style="background-color: #fff;"></div>
+  <div id="item24" class="item" style="background-color: #000;"></div>
+  </div>
+  <div id="row13" class="row" style="left: 36px; top: 270px;">
+  <div id="item0" class="item" style="background-color: #000;"></div>
+  <div id="item1" class="item" style="background-color: #000;"></div>
+  <div id="item2" class="item" style="background-color: #000;"></div>
+  <div id="item3" class="item" style="background-color: #000;"></div>
+  <div id="item4" class="item" style="background-color: #fff;"></div>
+  <div id="item5" class="item" style="background-color: #fff;"></div>
+  <div id="item6" class="item" style="background-color: #000;"></div>
+  <div id="item7" class="item" style="background-color: #000;"></div>
+  <div id="item8" class="item" style="background-color: #000;"></div>
+  <div id="item9" class="item" style="background-color: #fff;"></div>
+  <div id="item10" class="item" style="background-color: #000;"></div>
+  <div id="item11" class="item" style="background-color: #fff;"></div>
+  <div id="item12" class="item" style="background-color: #000;"></div>
+  <div id="item13" class="item" style="background-color: #000;"></div>
+  <div id="item14" class="item" style="background-color: #000;"></div>
+  <div id="item15" class="item" style="background-color: #000;"></div>
+  <div id="item16" class="item" style="background-color: #fff;"></div>
+  <div id="item17" class="item" style="background-color: #fff;"></div>
+  <div id="item18" class="item" style="background-color: #fff;"></div>
+  <div id="item19" class="item" style="background-color: #000;"></div>
+  <div id="item20" class="item" style="background-color: #000;"></div>
+  <div id="item21" class="item" style="background-color: #000;"></div>
+  <div id="item22" class="item" style="background-color: #fff;"></div>
+  <div id="item23" class="item" style="background-color: #fff;"></div>
+  <div id="item24" class="item" style="background-color: #000;"></div>
+  </div>
+  <div id="row14" class="row" style="left: 36px; top: 288px;">
+  <div id="item0" class="item" style="background-color: #000;"></div>
+  <div id="item1" class="item" style="background-color: #fff;"></div>
+  <div id="item2" class="item" style="background-color: #fff;"></div>
+  <div id="item3" class="item" style="background-color: #fff;"></div>
+  <div id="item4" class="item" style="background-color: #fff;"></div>
+  <div id="item5" class="item" style="background-color: #fff;"></div>
+  <div id="item6" class="item" style="background-color: #000;"></div>
+  <div id="item7" class="item" style="background-color: #fff;"></div>
+  <div id="item8" class="item" style="background-color: #fff;"></div>
+  <div id="item9" class="item" style="background-color: #000;"></div>
+  <div id="item10" class="item" style="background-color: #fff;"></div>
+  <div id="item11" class="item" style="background-color: #fff;"></div>
+  <div id="item12" class="item" style="background-color: #000;"></div>
+  <div id="item13" class="item" style="background-color: #fff;"></div>
+  <div id="item14" class="item" style="background-color: #fff;"></div>
+  <div id="item15" class="item" style="background-color: #000;"></div>
+  <div id="item16" class="item" style="background-color: #000;"></div>
+  <div id="item17" class="item" style="background-color: #fff;"></div>
+  <div id="item18" class="item" style="background-color: #fff;"></div>
+  <div id="item19" class="item" style="background-color: #fff;"></div>
+  <div id="item20" class="item" style="background-color: #000;"></div>
+  <div id="item21" class="item" style="background-color: #000;"></div>
+  <div id="item22" class="item" style="background-color: #fff;"></div>
+  <div id="item23" class="item" style="background-color: #000;"></div>
+  <div id="item24" class="item" style="background-color: #fff;"></div>
+  </div>
+  <div id="row15" class="row" style="left: 36px; top: 306px;">
+  <div id="item0" class="item" style="background-color: #fff;"></div>
+  <div id="item1" class="item" style="background-color: #fff;"></div>
+  <div id="item2" class="item" style="background-color: #fff;"></div>
+  <div id="item3" class="item" style="background-color: #000;"></div>
+  <div id="item4" class="item" style="background-color: #fff;"></div>
+  <div id="item5" class="item" style="background-color: #fff;"></div>
+  <div id="item6" class="item" style="background-color: #fff;"></div>
+  <div id="item7" class="item" style="background-color: #000;"></div>
+  <div id="item8" class="item" style="background-color: #fff;"></div>
+  <div id="item9" class="item" style="background-color: #fff;"></div>
+  <div id="item10" class="item" style="background-color: #000;"></div>
+  <div id="item11" class="item" style="background-color: #fff;"></div>
+  <div id="item12" class="item" style="background-color: #000;"></div>
+  <div id="item13" class="item" style="background-color: #fff;"></div>
+  <div id="item14" class="item" style="background-color: #fff;"></div>
+  <div id="item15" class="item" style="background-color: #000;"></div>
+  <div id="item16" class="item" style="background-color: #000;"></div>
+  <div id="item17" class="item" style="background-color: #fff;"></div>
+  <div id="item18" class="item" style="background-color: #000;"></div>
+  <div id="item19" class="item" style="background-color: #000;"></div>
+  <div id="item20" class="item" style="background-color: #fff;"></div>
+  <div id="item21" class="item" style="background-color: #000;"></div>
+  <div id="item22" class="item" style="background-color: #000;"></div>
+  <div id="item23" class="item" style="background-color: #fff;"></div>
+  <div id="item24" class="item" style="background-color: #000;"></div>
+  </div>
+  <div id="row16" class="row" style="left: 36px; top: 324px;">
+  <div id="item0" class="item" style="background-color: #fff;"></div>
+  <div id="item1" class="item" style="background-color: #fff;"></div>
+  <div id="item2" class="item" style="background-color: #fff;"></div>
+  <div id="item3" class="item" style="background-color: #fff;"></div>
+  <div id="item4" class="item" style="background-color: #fff;"></div>
+  <div id="item5" class="item" style="background-color: #fff;"></div>
+  <div id="item6" class="item" style="background-color: #fff;"></div>
+  <div id="item7" class="item" style="background-color: #fff;"></div>
+  <div id="item8" class="item" style="background-color: #fff;"></div>
+  <div id="item9" class="item" style="background-color: #fff;"></div>
+  <div id="item10" class="item" style="background-color: #fff;"></div>
+  <div id="item11" class="item" style="background-color: #fff;"></div>
+  <div id="item12" class="item" style="background-color: #fff;"></div>
+  <div id="item13" class="item" style="background-color: #fff;"></div>
+  <div id="item14" class="item" style="background-color: #fff;"></div>
+  <div id="item15" class="item" style="background-color: #fff;"></div>
+  <div id="item16" class="item" style="background-color: #000;"></div>
+  <div id="item17" class="item" style="background-color: #fff;"></div>
+  <div id="item18" class="item" style="background-color: #fff;"></div>
+  <div id="item19" class="item" style="background-color: #fff;"></div>
+  <div id="item20" class="item" style="background-color: #fff;"></div>
+  <div id="item21" class="item" style="background-color: #fff;"></div>
+  <div id="item22" class="item" style="background-color: #fff;"></div>
+  <div id="item23" class="item" style="background-color: #fff;"></div>
+  <div id="item24" class="item" style="background-color: #fff;"></div>
+  </div>
+  <div id="row17" class="row" style="left: 36px; top: 342px;">
+  <div id="item0" class="item" style="background-color: #000;"></div>
+  <div id="item1" class="item" style="background-color: #fff;"></div>
+  <div id="item2" class="item" style="background-color: #000;"></div>
+  <div id="item3" class="item" style="background-color: #000;"></div>
+  <div id="item4" class="item" style="background-color: #000;"></div>
+  <div id="item5" class="item" style="background-color: #000;"></div>
+  <div id="item6" class="item" style="background-color: #fff;"></div>
+  <div id="item7" class="item" style="background-color: #000;"></div>
+  <div id="item8" class="item" style="background-color: #000;"></div>
+  <div id="item9" class="item" style="background-color: #fff;"></div>
+  <div id="item10" class="item" style="background-color: #fff;"></div>
+  <div id="item11" class="item" style="background-color: #000;"></div>
+  <div id="item12" class="item" style="background-color: #000;"></div>
+  <div id="item13" class="item" style="background-color: #fff;"></div>
+  <div id="item14" class="item" style="background-color: #fff;"></div>
+  <div id="item15" class="item" style="background-color: #000;"></div>
+  <div id="item16" class="item" style="background-color: #000;"></div>
+  <div id="item17" class="item" style="background-color: #fff;"></div>
+  <div id="item18" class="item" style="background-color: #000;"></div>
+  <div id="item19" class="item" style="background-color: #000;"></div>
+  <div id="item20" class="item" style="background-color: #fff;"></div>
+  <div id="item21" class="item" style="background-color: #fff;"></div>
+  <div id="item22" class="item" style="background-color: #fff;"></div>
+  <div id="item23" class="item" style="background-color: #fff;"></div>
+  <div id="item24" class="item" style="background-color: #000;"></div>
+  </div>
+  <div id="row18" class="row" style="left: 36px; top: 360px;">
+  <div id="item0" class="item" style="background-color: #000;"></div>
+  <div id="item1" class="item" style="background-color: #fff;"></div>
+  <div id="item2" class="item" style="background-color: #000;"></div>
+  <div id="item3" class="item" style="background-color: #000;"></div>
+  <div id="item4" class="item" style="background-color: #000;"></div>
+  <div id="item5" class="item" style="background-color: #fff;"></div>
+  <div id="item6" class="item" style="background-color: #000;"></div>
+  <div id="item7" class="item" style="background-color: #fff;"></div>
+  <div id="item8" class="item" style="background-color: #fff;"></div>
+  <div id="item9" class="item" style="background-color: #000;"></div>
+  <div id="item10" class="item" style="background-color: #fff;"></div>
+  <div id="item11" class="item" style="background-color: #fff;"></div>
+  <div id="item12" class="item" style="background-color: #000;"></div>
+  <div id="item13" class="item" style="background-color: #fff;"></div>
+  <div id="item14" class="item" style="background-color: #000;"></div>
+  <div id="item15" class="item" style="background-color: #fff;"></div>
+  <div id="item16" class="item" style="background-color: #000;"></div>
+  <div id="item17" class="item" style="background-color: #fff;"></div>
+  <div id="item18" class="item" style="background-color: #000;"></div>
+  <div id="item19" class="item" style="background-color: #fff;"></div>
+  <div id="item20" class="item" style="background-color: #000;"></div>
+  <div id="item21" class="item" style="background-color: #000;"></div>
+  <div id="item22" class="item" style="background-color: #000;"></div>
+  <div id="item23" class="item" style="background-color: #fff;"></div>
+  <div id="item24" class="item" style="background-color: #000;"></div>
+  </div>
+  <div id="row19" class="row" style="left: 36px; top: 378px;">
+  <div id="item0" class="item" style="background-color: #000;"></div>
+  <div id="item1" class="item" style="background-color: #000;"></div>
+  <div id="item2" class="item" style="background-color: #000;"></div>
+  <div id="item3" class="item" style="background-color: #000;"></div>
+  <div id="item4" class="item" style="background-color: #000;"></div>
+  <div id="item5" class="item" style="background-color: #000;"></div>
+  <div id="item6" class="item" style="background-color: #000;"></div>
+  <div id="item7" class="item" style="background-color: #fff;"></div>
+  <div id="item8" class="item" style="background-color: #000;"></div>
+  <div id="item9" class="item" style="background-color: #fff;"></div>
+  <div id="item10" class="item" style="background-color: #fff;"></div>
+  <div id="item11" class="item" style="background-color: #000;"></div>
+  <div id="item12" class="item" style="background-color: #000;"></div>
+  <div id="item13" class="item" style="background-color: #000;"></div>
+  <div id="item14" class="item" style="background-color: #000;"></div>
+  <div id="item15" class="item" style="background-color: #fff;"></div>
+  <div id="item16" class="item" style="background-color: #000;"></div>
+  <div id="item17" class="item" style="background-color: #fff;"></div>
+  <div id="item18" class="item" style="background-color: #000;"></div>
+  <div id="item19" class="item" style="background-color: #fff;"></div>
+  <div id="item20" class="item" style="background-color: #000;"></div>
+  <div id="item21" class="item" style="background-color: #fff;"></div>
+  <div id="item22" class="item" style="background-color: #000;"></div>
+  <div id="item23" class="item" style="background-color: #fff;"></div>
+  <div id="item24" class="item" style="background-color: #000;"></div>
+  </div>
+  <div id="row20" class="row" style="left: 36px; top: 396px;">
+  <div id="item0" class="item" style="background-color: #000;"></div>
+  <div id="item1" class="item" style="background-color: #fff;"></div>
+  <div id="item2" class="item" style="background-color: #fff;"></div>
+  <div id="item3" class="item" style="background-color: #fff;"></div>
+  <div id="item4" class="item" style="background-color: #fff;"></div>
+  <div id="item5" class="item" style="background-color: #fff;"></div>
+  <div id="item6" class="item" style="background-color: #000;"></div>
+  <div id="item7" class="item" style="background-color: #fff;"></div>
+  <div id="item8" class="item" style="background-color: #fff;"></div>
+  <div id="item9" class="item" style="background-color: #000;"></div>
+  <div id="item10" class="item" style="background-color: #fff;"></div>
+  <div id="item11" class="item" style="background-color: #fff;"></div>
+  <div id="item12" class="item" style="background-color: #fff;"></div>
+  <div id="item13" class="item" style="background-color: #fff;"></div>
+  <div id="item14" class="item" style="background-color: #fff;"></div>
+  <div id="item15" class="item" style="background-color: #fff;"></div>
+  <div id="item16" class="item" style="background-color: #000;"></div>
+  <div id="item17" class="item" style="background-color: #fff;"></div>
+  <div id="item18" class="item" style="background-color: #fff;"></div>
+  <div id="item19" class="item" style="background-color: #000;"></div>
+  <div id="item20" class="item" style="background-color: #000;"></div>
+  <div id="item21" class="item" style="background-color: #000;"></div>
+  <div id="item22" class="item" style="background-color: #fff;"></div>
+  <div id="item23" class="item" style="background-color: #fff;"></div>
+  <div id="item24" class="item" style="background-color: #fff;"></div>
+  </div>
+  <div id="row21" class="row" style="left: 36px; top: 414px;">
+  <div id="item0" class="item" style="background-color: #000;"></div>
+  <div id="item1" class="item" style="background-color: #fff;"></div>
+  <div id="item2" class="item" style="background-color: #000;"></div>
+  <div id="item3" class="item" style="background-color: #fff;"></div>
+  <div id="item4" class="item" style="background-color: #fff;"></div>
+  <div id="item5" class="item" style="background-color: #fff;"></div>
+  <div id="item6" class="item" style="background-color: #000;"></div>
+  <div id="item7" class="item" style="background-color: #000;"></div>
+  <div id="item8" class="item" style="background-color: #fff;"></div>
+  <div id="item9" class="item" style="background-color: #fff;"></div>
+  <div id="item10" class="item" style="background-color: #000;"></div>
+  <div id="item11" class="item" style="background-color: #fff;"></div>
+  <div id="item12" class="item" style="background-color: #fff;"></div>
+  <div id="item13" class="item" style="background-color: #fff;"></div>
+  <div id="item14" class="item" style="background-color: #fff;"></div>
+  <div id="item15" class="item" style="background-color: #fff;"></div>
+  <div id="item16" class="item" style="background-color: #000;"></div>
+  <div id="item17" class="item" style="background-color: #fff;"></div>
+  <div id="item18" class="item" style="background-color: #fff;"></div>
+  <div id="item19" class="item" style="background-color: #000;"></div>
+  <div id="item20" class="item" style="background-color: #fff;"></div>
+  <div id="item21" class="item" style="background-color: #fff;"></div>
+  <div id="item22" class="item" style="background-color: #000;"></div>
+  <div id="item23" class="item" style="background-color: #fff;"></div>
+  <div id="item24" class="item" style="background-color: #000;"></div>
+  </div>
+  <div id="row22" class="row" style="left: 36px; top: 432px;">
+  <div id="item0" class="item" style="background-color: #000;"></div>
+  <div id="item1" class="item" style="background-color: #fff;"></div>
+  <div id="item2" class="item" style="background-color: #fff;"></div>
+  <div id="item3" class="item" style="background-color: #fff;"></div>
+  <div id="item4" class="item" style="background-color: #fff;"></div>
+  <div id="item5" class="item" style="background-color: #fff;"></div>
+  <div id="item6" class="item" style="background-color: #000;"></div>
+  <div id="item7" class="item" style="background-color: #fff;"></div>
+  <div id="item8" class="item" style="background-color: #000;"></div>
+  <div id="item9" class="item" style="background-color: #000;"></div>
+  <div id="item10" class="item" style="background-color: #000;"></div>
+  <div id="item11" class="item" style="background-color: #fff;"></div>
+  <div id="item12" class="item" style="background-color: #fff;"></div>
+  <div id="item13" class="item" style="background-color: #fff;"></div>
+  <div id="item14" class="item" style="background-color: #000;"></div>
+  <div id="item15" class="item" style="background-color: #fff;"></div>
+  <div id="item16" class="item" style="background-color: #000;"></div>
+  <div id="item17" class="item" style="background-color: #fff;"></div>
+  <div id="item18" class="item" style="background-color: #000;"></div>
+  <div id="item19" class="item" style="background-color: #fff;"></div>
+  <div id="item20" class="item" style="background-color: #fff;"></div>
+  <div id="item21" class="item" style="background-color: #fff;"></div>
+  <div id="item22" class="item" style="background-color: #fff;"></div>
+  <div id="item23" class="item" style="background-color: #fff;"></div>
+  <div id="item24" class="item" style="background-color: #000;"></div>
+  </div>
+  <div id="row23" class="row" style="left: 36px; top: 450px;">
+  <div id="item0" class="item" style="background-color: #fff;"></div>
+  <div id="item1" class="item" style="background-color: #fff;"></div>
+  <div id="item2" class="item" style="background-color: #fff;"></div>
+  <div id="item3" class="item" style="background-color: #000;"></div>
+  <div id="item4" class="item" style="background-color: #000;"></div>
+  <div id="item5" class="item" style="background-color: #000;"></div>
+  <div id="item6" class="item" style="background-color: #fff;"></div>
+  <div id="item7" class="item" style="background-color: #fff;"></div>
+  <div id="item8" class="item" style="background-color: #fff;"></div>
+  <div id="item9" class="item" style="background-color: #fff;"></div>
+  <div id="item10" class="item" style="background-color: #000;"></div>
+  <div id="item11" class="item" style="background-color: #000;"></div>
+  <div id="item12" class="item" style="background-color: #000;"></div>
+  <div id="item13" class="item" style="background-color: #fff;"></div>
+  <div id="item14" class="item" style="background-color: #fff;"></div>
+  <div id="item15" class="item" style="background-color: #000;"></div>
+  <div id="item16" class="item" style="background-color: #000;"></div>
+  <div id="item17" class="item" style="background-color: #000;"></div>
+  <div id="item18" class="item" style="background-color: #fff;"></div>
+  <div id="item19" class="item" style="background-color: #fff;"></div>
+  <div id="item20" class="item" style="background-color: #000;"></div>
+  <div id="item21" class="item" style="background-color: #000;"></div>
+  <div id="item22" class="item" style="background-color: #fff;"></div>
+  <div id="item23" class="item" style="background-color: #000;"></div>
+  <div id="item24" class="item" style="background-color: #fff;"></div>
+  </div>
+  <div id="row24" class="row" style="left: 36px; top: 468px;">
+  <div id="item0" class="item" style="background-color: #000;"></div>
+  <div id="item1" class="item" style="background-color: #fff;"></div>
+  <div id="item2" class="item" style="background-color: #000;"></div>
+  <div id="item3" class="item" style="background-color: #000;"></div>
+  <div id="item4" class="item" style="background-color: #000;"></div>
+  <div id="item5" class="item" style="background-color: #fff;"></div>
+  <div id="item6" class="item" style="background-color: #000;"></div>
+  <div id="item7" class="item" style="background-color: #fff;"></div>
+  <div id="item8" class="item" style="background-color: #000;"></div>
+  <div id="item9" class="item" style="background-color: #fff;"></div>
+  <div id="item10" class="item" style="background-color: #fff;"></div>
+  <div id="item11" class="item" style="background-color: #000;"></div>
+  <div id="item12" class="item" style="background-color: #fff;"></div>
+  <div id="item13" class="item" style="background-color: #000;"></div>
+  <div id="item14" class="item" style="background-color: #fff;"></div>
+  <div id="item15" class="item" style="background-color: #fff;"></div>
+  <div id="item16" class="item" style="background-color: #fff;"></div>
+  <div id="item17" class="item" style="background-color: #fff;"></div>
+  <div id="item18" class="item" style="background-color: #000;"></div>
+  <div id="item19" class="item" style="background-color: #fff;"></div>
+  <div id="item20" class="item" style="background-color: #000;"></div>
+  <div id="item21" class="item" style="background-color: #000;"></div>
+  <div id="item22" class="item" style="background-color: #000;"></div>
+  <div id="item23" class="item" style="background-color: #fff;"></div>
+  <div id="item24" class="item" style="background-color: #000;"></div>
+  </div>
+
+  <div id="column0" class="column" style="left: 1044px; top: 36px;">
+  <div id="item0" class="item" style="background-color: #000;"></div>
+  <div id="item1" class="item" style="background-color: #fff;"></div>
+  <div id="item2" class="item" style="background-color: #000;"></div>
+  <div id="item3" class="item" style="background-color: #fff;"></div>
+  <div id="item4" class="item" style="background-color: #fff;"></div>
+  <div id="item5" class="item" style="background-color: #000;"></div>
+  <div id="item6" class="item" style="background-color: #000;"></div>
+  <div id="item7" class="item" style="background-color: #fff;"></div>
+  <div id="item8" class="item" style="background-color: #fff;"></div>
+  <div id="item9" class="item" style="background-color: #000;"></div>
+  <div id="item10" class="item" style="background-color: #000;"></div>
+  <div id="item11" class="item" style="background-color: #fff;"></div>
+  <div id="item12" class="item" style="background-color: #000;"></div>
+  <div id="item13" class="item" style="background-color: #fff;"></div>
+  <div id="item14" class="item" style="background-color: #000;"></div>
+  <div id="item15" class="item" style="background-color: #000;"></div>
+  <div id="item16" class="item" style="background-color: #fff;"></div>
+  <div id="item17" class="item" style="background-color: #000;"></div>
+  <div id="item18" class="item" style="background-color: #000;"></div>
+  <div id="item19" class="item" style="background-color: #fff;"></div>
+  <div id="item20" class="item" style="background-color: #fff;"></div>
+  <div id="item21" class="item" style="background-color: #fff;"></div>
+  <div id="item22" class="item" style="background-color: #000;"></div>
+  <div id="item23" class="item" style="background-color: #fff;"></div>
+  <div id="item24" class="item" style="background-color: #000;"></div>
+  </div>
+  <div id="column1" class="column" style="left: 1062px; top: 36px;">
+  <div id="item0" class="item" style="background-color: #000;"></div>
+  <div id="item1" class="item" style="background-color: #000;"></div>
+  <div id="item2" class="item" style="background-color: #000;"></div>
+  <div id="item3" class="item" style="background-color: #000;"></div>
+  <div id="item4" class="item" style="background-color: #000;"></div>
+  <div id="item5" class="item" style="background-color: #000;"></div>
+  <div id="item6" class="item" style="background-color: #000;"></div>
+  <div id="item7" class="item" style="background-color: #fff;"></div>
+  <div id="item8" class="item" style="background-color: #000;"></div>
+  <div id="item9" class="item" style="background-color: #000;"></div>
+  <div id="item10" class="item" style="background-color: #000;"></div>
+  <div id="item11" class="item" style="background-color: #fff;"></div>
+  <div id="item12" class="item" style="background-color: #000;"></div>
+  <div id="item13" class="item" style="background-color: #000;"></div>
+  <div id="item14" class="item" style="background-color: #000;"></div>
+  <div id="item15" class="item" style="background-color: #fff;"></div>
+  <div id="item16" class="item" style="background-color: #000;"></div>
+  <div id="item17" class="item" style="background-color: #000;"></div>
+  <div id="item18" class="item" style="background-color: #000;"></div>
+  <div id="item19" class="item" style="background-color: #fff;"></div>
+  <div id="item20" class="item" style="background-color: #fff;"></div>
+  <div id="item21" class="item" style="background-color: #fff;"></div>
+  <div id="item22" class="item" style="background-color: #000;"></div>
+  <div id="item23" class="item" style="background-color: #fff;"></div>
+  <div id="item24" class="item" style="background-color: #000;"></div>
+  </div>
+  <div id="column2" class="column" style="left: 1080px; top: 36px;">
+  <div id="item0" class="item" style="background-color: #000;"></div>
+  <div id="item1" class="item" style="background-color: #fff;"></div>
+  <div id="item2" class="item" style="background-color: #fff;"></div>
+  <div id="item3" class="item" style="background-color: #fff;"></div>
+  <div id="item4" class="item" style="background-color: #fff;"></div>
+  <div id="item5" class="item" style="background-color: #fff;"></div>
+  <div id="item6" class="item" style="background-color: #000;"></div>
+  <div id="item7" class="item" style="background-color: #fff;"></div>
+  <div id="item8" class="item" style="background-color: #fff;"></div>
+  <div id="item9" class="item" style="background-color: #000;"></div>
+  <div id="item10" class="item" style="background-color: #fff;"></div>
+  <div id="item11" class="item" style="background-color: #000;"></div>
+  <div id="item12" class="item" style="background-color: #000;"></div>
+  <div id="item13" class="item" style="background-color: #fff;"></div>
+  <div id="item14" class="item" style="background-color: #fff;"></div>
+  <div id="item15" class="item" style="background-color: #000;"></div>
+  <div id="item16" class="item" style="background-color: #fff;"></div>
+  <div id="item17" class="item" style="background-color: #fff;"></div>
+  <div id="item18" class="item" style="background-color: #000;"></div>
+  <div id="item19" class="item" style="background-color: #fff;"></div>
+  <div id="item20" class="item" style="background-color: #fff;"></div>
+  <div id="item21" class="item" style="background-color: #fff;"></div>
+  <div id="item22" class="item" style="background-color: #fff;"></div>
+  <div id="item23" class="item" style="background-color: #fff;"></div>
+  <div id="item24" class="item" style="background-color: #000;"></div>
+  </div>
+  <div id="column3" class="column" style="left: 1098px; top: 36px;">
+  <div id="item0" class="item" style="background-color: #000;"></div>
+  <div id="item1" class="item" style="background-color: #fff;"></div>
+  <div id="item2" class="item" style="background-color: #fff;"></div>
+  <div id="item3" class="item" style="background-color: #fff;"></div>
+  <div id="item4" class="item" style="background-color: #fff;"></div>
+  <div id="item5" class="item" style="background-color: #fff;"></div>
+  <div id="item6" class="item" style="background-color: #000;"></div>
+  <div id="item7" class="item" style="background-color: #fff;"></div>
+  <div id="item8" class="item" style="background-color: #fff;"></div>
+  <div id="item9" class="item" style="background-color: #fff;"></div>
+  <div id="item10" class="item" style="background-color: #fff;"></div>
+  <div id="item11" class="item" style="background-color: #fff;"></div>
+  <div id="item12" class="item" style="background-color: #000;"></div>
+  <div id="item13" class="item" style="background-color: #fff;"></div>
+  <div id="item14" class="item" style="background-color: #000;"></div>
+  <div id="item15" class="item" style="background-color: #fff;"></div>
+  <div id="item16" class="item" style="background-color: #000;"></div>
+  <div id="item17" class="item" style="background-color: #fff;"></div>
+  <div id="item18" class="item" style="background-color: #000;"></div>
+  <div id="item19" class="item" style="background-color: #fff;"></div>
+  <div id="item20" class="item" style="background-color: #fff;"></div>
+  <div id="item21" class="item" style="background-color: #fff;"></div>
+  <div id="item22" class="item" style="background-color: #fff;"></div>
+  <div id="item23" class="item" style="background-color: #fff;"></div>
+  <div id="item24" class="item" style="background-color: #000;"></div>
+  </div>
+  <div id="column4" class="column" style="left: 1116px; top: 36px;">
+  <div id="item0" class="item" style="background-color: #fff;"></div>
+  <div id="item1" class="item" style="background-color: #000;"></div>
+  <div id="item2" class="item" style="background-color: #fff;"></div>
+  <div id="item3" class="item" style="background-color: #fff;"></div>
+  <div id="item4" class="item" style="background-color: #000;"></div>
+  <div id="item5" class="item" style="background-color: #000;"></div>
+  <div id="item6" class="item" style="background-color: #000;"></div>
+  <div id="item7" class="item" style="background-color: #000;"></div>
+  <div id="item8" class="item" style="background-color: #000;"></div>
+  <div id="item9" class="item" style="background-color: #000;"></div>
+  <div id="item10" class="item" style="background-color: #fff;"></div>
+  <div id="item11" class="item" style="background-color: #000;"></div>
+  <div id="item12" class="item" style="background-color: #000;"></div>
+  <div id="item13" class="item" style="background-color: #000;"></div>
+  <div id="item14" class="item" style="background-color: #fff;"></div>
+  <div id="item15" class="item" style="background-color: #fff;"></div>
+  <div id="item16" class="item" style="background-color: #000;"></div>
+  <div id="item17" class="item" style="background-color: #000;"></div>
+  <div id="item18" class="item" style="background-color: #000;"></div>
+  <div id="item19" class="item" style="background-color: #000;"></div>
+  <div id="item20" class="item" style="background-color: #000;"></div>
+  <div id="item21" class="item" style="background-color: #000;"></div>
+  <div id="item22" class="item" style="background-color: #fff;"></div>
+  <div id="item23" class="item" style="background-color: #000;"></div>
+  <div id="item24" class="item" style="background-color: #000;"></div>
+  </div>
+  <div id="column5" class="column" style="left: 1134px; top: 36px;">
+  <div id="item0" class="item" style="background-color: #000;"></div>
+  <div id="item1" class="item" style="background-color: #fff;"></div>
+  <div id="item2" class="item" style="background-color: #000;"></div>
+  <div id="item3" class="item" style="background-color: #000;"></div>
+  <div id="item4" class="item" style="background-color: #fff;"></div>
+  <div id="item5" class="item" style="background-color: #fff;"></div>
+  <div id="item6" class="item" style="background-color: #fff;"></div>
+  <div id="item7" class="item" style="background-color: #fff;"></div>
+  <div id="item8" class="item" style="background-color: #fff;"></div>
+  <div id="item9" class="item" style="background-color: #fff;"></div>
+  <div id="item10" class="item" style="background-color: #fff;"></div>
+  <div id="item11" class="item" style="background-color: #fff;"></div>
+  <div id="item12" class="item" style="background-color: #fff;"></div>
+  <div id="item13" class="item" style="background-color: #fff;"></div>
+  <div id="item14" class="item" style="background-color: #000;"></div>
+  <div id="item15" class="item" style="background-color: #fff;"></div>
+  <div id="item16" class="item" style="background-color: #fff;"></div>
+  <div id="item17" class="item" style="background-color: #fff;"></div>
+  <div id="item18" class="item" style="background-color: #000;"></div>
+  <div id="item19" class="item" style="background-color: #fff;"></div>
+  <div id="item20" class="item" style="background-color: #fff;"></div>
+  <div id="item21" class="item" style="background-color: #fff;"></div>
+  <div id="item22" class="item" style="background-color: #fff;"></div>
+  <div id="item23" class="item" style="background-color: #fff;"></div>
+  <div id="item24" class="item" style="background-color: #fff;"></div>
+  </div>
+  <div id="column6" class="column" style="left: 1152px; top: 36px;">
+  <div id="item0" class="item" style="background-color: #fff;"></div>
+  <div id="item1" class="item" style="background-color: #000;"></div>
+  <div id="item2" class="item" style="background-color: #fff;"></div>
+  <div id="item3" class="item" style="background-color: #000;"></div>
+  <div id="item4" class="item" style="background-color: #000;"></div>
+  <div id="item5" class="item" style="background-color: #000;"></div>
+  <div id="item6" class="item" style="background-color: #fff;"></div>
+  <div id="item7" class="item" style="background-color: #fff;"></div>
+  <div id="item8" class="item" style="background-color: #fff;"></div>
+  <div id="item9" class="item" style="background-color: #fff;"></div>
+  <div id="item10" class="item" style="background-color: #000;"></div>
+  <div id="item11" class="item" style="background-color: #fff;"></div>
+  <div id="item12" class="item" style="background-color: #fff;"></div>
+  <div id="item13" class="item" style="background-color: #fff;"></div>
+  <div id="item14" class="item" style="background-color: #fff;"></div>
+  <div id="item15" class="item" style="background-color: #fff;"></div>
+  <div id="item16" class="item" style="background-color: #000;"></div>
+  <div id="item17" class="item" style="background-color: #fff;"></div>
+  <div id="item18" class="item" style="background-color: #fff;"></div>
+  <div id="item19" class="item" style="background-color: #000;"></div>
+  <div id="item20" class="item" style="background-color: #000;"></div>
+  <div id="item21" class="item" style="background-color: #fff;"></div>
+  <div id="item22" class="item" style="background-color: #000;"></div>
+  <div id="item23" class="item" style="background-color: #000;"></div>
+  <div id="item24" class="item" style="background-color: #fff;"></div>
+  </div>
+  <div id="column7" class="column" style="left: 1170px; top: 36px;">
+  <div id="item0" class="item" style="background-color: #000;"></div>
+  <div id="item1" class="item" style="background-color: #fff;"></div>
+  <div id="item2" class="item" style="background-color: #fff;"></div>
+  <div id="item3" class="item" style="background-color: #fff;"></div>
+  <div id="item4" class="item" style="background-color: #fff;"></div>
+  <div id="item5" class="item" style="background-color: #fff;"></div>
+  <div id="item6" class="item" style="background-color: #000;"></div>
+  <div id="item7" class="item" style="background-color: #fff;"></div>
+  <div id="item8" class="item" style="background-color: #000;"></div>
+  <div id="item9" class="item" style="background-color: #000;"></div>
+  <div id="item10" class="item" style="background-color: #fff;"></div>
+  <div id="item11" class="item" style="background-color: #fff;"></div>
+  <div id="item12" class="item" style="background-color: #000;"></div>
+  <div id="item13" class="item" style="background-color: #000;"></div>
+  <div id="item14" class="item" style="background-color: #000;"></div>
+  <div id="item15" class="item" style="background-color: #fff;"></div>
+  <div id="item16" class="item" style="background-color: #000;"></div>
+  <div id="item17" class="item" style="background-color: #fff;"></div>
+  <div id="item18" class="item" style="background-color: #fff;"></div>
+  <div id="item19" class="item" style="background-color: #fff;"></div>
+  <div id="item20" class="item" style="background-color: #000;"></div>
+  <div id="item21" class="item" style="background-color: #fff;"></div>
+  <div id="item22" class="item" style="background-color: #fff;"></div>
+  <div id="item23" class="item" style="background-color: #000;"></div>
+  <div id="item24" class="item" style="background-color: #000;"></div>
+  </div>
+  <div id="column8" class="column" style="left: 1188px; top: 36px;">
+  <div id="item0" class="item" style="background-color: #000;"></div>
+  <div id="item1" class="item" style="background-color: #000;"></div>
+  <div id="item2" class="item" style="background-color: #000;"></div>
+  <div id="item3" class="item" style="background-color: #000;"></div>
+  <div id="item4" class="item" style="background-color: #000;"></div>
+  <div id="item5" class="item" style="background-color: #000;"></div>
+  <div id="item6" class="item" style="background-color: #000;"></div>
+  <div id="item7" class="item" style="background-color: #fff;"></div>
+  <div id="item8" class="item" style="background-color: #000;"></div>
+  <div id="item9" class="item" style="background-color: #000;"></div>
+  <div id="item10" class="item" style="background-color: #000;"></div>
+  <div id="item11" class="item" style="background-color: #fff;"></div>
+  <div id="item12" class="item" style="background-color: #fff;"></div>
+  <div id="item13" class="item" style="background-color: #fff;"></div>
+  <div id="item14" class="item" style="background-color: #000;"></div>
+  <div id="item15" class="item" style="background-color: #fff;"></div>
+  <div id="item16" class="item" style="background-color: #000;"></div>
+  <div id="item17" class="item" style="background-color: #fff;"></div>
+  <div id="item18" class="item" style="background-color: #000;"></div>
+  <div id="item19" class="item" style="background-color: #000;"></div>
+  <div id="item20" class="item" style="background-color: #000;"></div>
+  <div id="item21" class="item" style="background-color: #000;"></div>
+  <div id="item22" class="item" style="background-color: #000;"></div>
+  <div id="item23" class="item" style="background-color: #000;"></div>
+  <div id="item24" class="item" style="background-color: #000;"></div>
+  </div>
+  <div id="column9" class="column" style="left: 1206px; top: 36px;">
+  <div id="item0" class="item" style="background-color: #000;"></div>
+  <div id="item1" class="item" style="background-color: #fff;"></div>
+  <div id="item2" class="item" style="background-color: #fff;"></div>
+  <div id="item3" class="item" style="background-color: #fff;"></div>
+  <div id="item4" class="item" style="background-color: #fff;"></div>
+  <div id="item5" class="item" style="background-color: #fff;"></div>
+  <div id="item6" class="item" style="background-color: #000;"></div>
+  <div id="item7" class="item" style="background-color: #fff;"></div>
+  <div id="item8" class="item" style="background-color: #fff;"></div>
+  <div id="item9" class="item" style="background-color: #fff;"></div>
+  <div id="item10" class="item" style="background-color: #fff;"></div>
+  <div id="item11" class="item" style="background-color: #000;"></div>
+  <div id="item12" class="item" style="background-color: #000;"></div>
+  <div id="item13" class="item" style="background-color: #fff;"></div>
+  <div id="item14" class="item" style="background-color: #fff;"></div>
+  <div id="item15" class="item" style="background-color: #fff;"></div>
+  <div id="item16" class="item" style="background-color: #fff;"></div>
+  <div id="item17" class="item" style="background-color: #fff;"></div>
+  <div id="item18" class="item" style="background-color: #fff;"></div>
+  <div id="item19" class="item" style="background-color: #000;"></div>
+  <div id="item20" class="item" style="background-color: #000;"></div>
+  <div id="item21" class="item" style="background-color: #000;"></div>
+  <div id="item22" class="item" style="background-color: #000;"></div>
+  <div id="item23" class="item" style="background-color: #fff;"></div>
+  <div id="item24" class="item" style="background-color: #fff;"></div>
+  </div>
+  <div id="column10" class="column" style="left: 1224px; top: 36px;">
+  <div id="item0" class="item" style="background-color: #fff;"></div>
+  <div id="item1" class="item" style="background-color: #fff;"></div>
+  <div id="item2" class="item" style="background-color: #fff;"></div>
+  <div id="item3" class="item" style="background-color: #000;"></div>
+  <div id="item4" class="item" style="background-color: #fff;"></div>
+  <div id="item5" class="item" style="background-color: #fff;"></div>
+  <div id="item6" class="item" style="background-color: #fff;"></div>
+  <div id="item7" class="item" style="background-color: #fff;"></div>
+  <div id="item8" class="item" style="background-color: #fff;"></div>
+  <div id="item9" class="item" style="background-color: #000;"></div>
+  <div id="item10" class="item" style="background-color: #000;"></div>
+  <div id="item11" class="item" style="background-color: #000;"></div>
+  <div id="item12" class="item" style="background-color: #fff;"></div>
+  <div id="item13" class="item" style="background-color: #000;"></div>
+  <div id="item14" class="item" style="background-color: #000;"></div>
+  <div id="item15" class="item" style="background-color: #000;"></div>
+  <div id="item16" class="item" style="background-color: #000;"></div>
+  <div id="item17" class="item" style="background-color: #fff;"></div>
+  <div id="item18" class="item" style="background-color: #fff;"></div>
+  <div id="item19" class="item" style="background-color: #000;"></div>
+  <div id="item20" class="item" style="background-color: #000;"></div>
+  <div id="item21" class="item" style="background-color: #fff;"></div>
+  <div id="item22" class="item" style="background-color: #fff;"></div>
+  <div id="item23" class="item" style="background-color: #fff;"></div>
+  <div id="item24" class="item" style="background-color: #000;"></div>
+  </div>
+  <div id="column11" class="column" style="left: 1242px; top: 36px;">
+  <div id="item0" class="item" style="background-color: #000;"></div>
+  <div id="item1" class="item" style="background-color: #fff;"></div>
+  <div id="item2" class="item" style="background-color: #000;"></div>
+  <div id="item3" class="item" style="background-color: #000;"></div>
+  <div id="item4" class="item" style="background-color: #000;"></div>
+  <div id="item5" class="item" style="background-color: #fff;"></div>
+  <div id="item6" class="item" style="background-color: #000;"></div>
+  <div id="item7" class="item" style="background-color: #fff;"></div>
+  <div id="item8" class="item" style="background-color: #000;"></div>
+  <div id="item9" class="item" style="background-color: #fff;"></div>
+  <div id="item10" class="item" style="background-color: #000;"></div>
+  <div id="item11" class="item" style="background-color: #fff;"></div>
+  <div id="item12" class="item" style="background-color: #fff;"></div>
+  <div id="item13" class="item" style="background-color: #000;"></div>
+  <div id="item14" class="item" style="background-color: #fff;"></div>
+  <div id="item15" class="item" style="background-color: #fff;"></div>
+  <div id="item16" class="item" style="background-color: #fff;"></div>
+  <div id="item17" class="item" style="background-color: #000;"></div>
+  <div id="item18" class="item" style="background-color: #000;"></div>
+  <div id="item19" class="item" style="background-color: #fff;"></div>
+  <div id="item20" class="item" style="background-color: #fff;"></div>
+  <div id="item21" class="item" style="background-color: #000;"></div>
+  <div id="item22" class="item" style="background-color: #000;"></div>
+  <div id="item23" class="item" style="background-color: #fff;"></div>
+  <div id="item24" class="item" style="background-color: #fff;"></div>
+  </div>
+  <div id="column12" class="column" style="left: 1260px; top: 36px;">
+  <div id="item0" class="item" style="background-color: #fff;"></div>
+  <div id="item1" class="item" style="background-color: #fff;"></div>
+  <div id="item2" class="item" style="background-color: #fff;"></div>
+  <div id="item3" class="item" style="background-color: #fff;"></div>
+  <div id="item4" class="item" style="background-color: #fff;"></div>
+  <div id="item5" class="item" style="background-color: #fff;"></div>
+  <div id="item6" class="item" style="background-color: #fff;"></div>
+  <div id="item7" class="item" style="background-color: #fff;"></div>
+  <div id="item8" class="item" style="background-color: #fff;"></div>
+  <div id="item9" class="item" style="background-color: #fff;"></div>
+  <div id="item10" class="item" style="background-color: #fff;"></div>
+  <div id="item11" class="item" style="background-color: #000;"></div>
+  <div id="item12" class="item" style="background-color: #fff;"></div>
+  <div id="item13" class="item" style="background-color: #fff;"></div>
+  <div id="item14" class="item" style="background-color: #fff;"></div>
+  <div id="item15" class="item" style="background-color: #fff;"></div>
+  <div id="item16" class="item" style="background-color: #000;"></div>
+  <div id="item17" class="item" style="background-color: #fff;"></div>
+  <div id="item18" class="item" style="background-color: #fff;"></div>
+  <div id="item19" class="item" style="background-color: #fff;"></div>
+  <div id="item20" class="item" style="background-color: #000;"></div>
+  <div id="item21" class="item" style="background-color: #000;"></div>
+  <div id="item22" class="item" style="background-color: #fff;"></div>
+  <div id="item23" class="item" style="background-color: #fff;"></div>
+  <div id="item24" class="item" style="background-color: #fff;"></div>
+  </div>
+  <div id="column13" class="column" style="left: 1278px; top: 36px;">
+  <div id="item0" class="item" style="background-color: #000;"></div>
+  <div id="item1" class="item" style="background-color: #fff;"></div>
+  <div id="item2" class="item" style="background-color: #000;"></div>
+  <div id="item3" class="item" style="background-color: #000;"></div>
+  <div id="item4" class="item" style="background-color: #000;"></div>
+  <div id="item5" class="item" style="background-color: #fff;"></div>
+  <div id="item6" class="item" style="background-color: #000;"></div>
+  <div id="item7" class="item" style="background-color: #fff;"></div>
+  <div id="item8" class="item" style="background-color: #fff;"></div>
+  <div id="item9" class="item" style="background-color: #fff;"></div>
+  <div id="item10" class="item" style="background-color: #fff;"></div>
+  <div id="item11" class="item" style="background-color: #000;"></div>
+  <div id="item12" class="item" style="background-color: #000;"></div>
+  <div id="item13" class="item" style="background-color: #000;"></div>
+  <div id="item14" class="item" style="background-color: #000;"></div>
+  <div id="item15" class="item" style="background-color: #000;"></div>
+  <div id="item16" class="item" style="background-color: #000;"></div>
+  <div id="item17" class="item" style="background-color: #000;"></div>
+  <div id="item18" class="item" style="background-color: #fff;"></div>
+  <div id="item19" class="item" style="background-color: #000;"></div>
+  <div id="item20" class="item" style="background-color: #000;"></div>
+  <div id="item21" class="item" style="background-color: #fff;"></div>
+  <div id="item22" class="item" style="background-color: #fff;"></div>
+  <div id="item23" class="item" style="background-color: #000;"></div>
+  <div id="item24" class="item" style="background-color: #000;"></div>
+  </div>
+  <div id="column14" class="column" style="left: 1296px; top: 36px;">
+  <div id="item0" class="item" style="background-color: #000;"></div>
+  <div id="item1" class="item" style="background-color: #000;"></div>
+  <div id="item2" class="item" style="background-color: #fff;"></div>
+  <div id="item3" class="item" style="background-color: #000;"></div>
+  <div id="item4" class="item" style="background-color: #000;"></div>
+  <div id="item5" class="item" style="background-color: #000;"></div>
+  <div id="item6" class="item" style="background-color: #000;"></div>
+  <div id="item7" class="item" style="background-color: #fff;"></div>
+  <div id="item8" class="item" style="background-color: #fff;"></div>
+  <div id="item9" class="item" style="background-color: #fff;"></div>
+  <div id="item10" class="item" style="background-color: #fff;"></div>
+  <div id="item11" class="item" style="background-color: #fff;"></div>
+  <div id="item12" class="item" style="background-color: #fff;"></div>
+  <div id="item13" class="item" style="background-color: #fff;"></div>
+  <div id="item14" class="item" style="background-color: #000;"></div>
+  <div id="item15" class="item" style="background-color: #000;"></div>
+  <div id="item16" class="item" style="background-color: #fff;"></div>
+  <div id="item17" class="item" style="background-color: #000;"></div>
+  <div id="item18" class="item" style="background-color: #000;"></div>
+  <div id="item19" class="item" style="background-color: #fff;"></div>
+  <div id="item20" class="item" style="background-color: #fff;"></div>
+  <div id="item21" class="item" style="background-color: #000;"></div>
+  <div id="item22" class="item" style="background-color: #000;"></div>
+  <div id="item23" class="item" style="background-color: #fff;"></div>
+  <div id="item24" class="item" style="background-color: #fff;"></div>
+  </div>
+  <div id="column15" class="column" style="left: 1314px; top: 36px;">
+  <div id="item0" class="item" style="background-color: #fff;"></div>
+  <div id="item1" class="item" style="background-color: #fff;"></div>
+  <div id="item2" class="item" style="background-color: #fff;"></div>
+  <div id="item3" class="item" style="background-color: #fff;"></div>
+  <div id="item4" class="item" style="background-color: #fff;"></div>
+  <div id="item5" class="item" style="background-color: #fff;"></div>
+  <div id="item6" class="item" style="background-color: #fff;"></div>
+  <div id="item7" class="item" style="background-color: #fff;"></div>
+  <div id="item8" class="item" style="background-color: #000;"></div>
+  <div id="item9" class="item" style="background-color: #000;"></div>
+  <div id="item10" class="item" style="background-color: #fff;"></div>
+  <div id="item11" class="item" style="background-color: #fff;"></div>
+  <div id="item12" class="item" style="background-color: #000;"></div>
+  <div id="item13" class="item" style="background-color: #000;"></div>
+  <div id="item14" class="item" style="background-color: #000;"></div>
+  <div id="item15" class="item" style="background-color: #fff;"></div>
+  <div id="item16" class="item" style="background-color: #fff;"></div>
+  <div id="item17" class="item" style="background-color: #fff;"></div>
+  <div id="item18" class="item" style="background-color: #fff;"></div>
+  <div id="item19" class="item" style="background-color: #fff;"></div>
+  <div id="item20" class="item" style="background-color: #fff;"></div>
+  <div id="item21" class="item" style="background-color: #fff;"></div>
+  <div id="item22" class="item" style="background-color: #fff;"></div>
+  <div id="item23" class="item" style="background-color: #fff;"></div>
+  <div id="item24" class="item" style="background-color: #fff;"></div>
+  </div>
+  <div id="column16" class="column" style="left: 1332px; top: 36px;">
+  <div id="item0" class="item" style="background-color: #fff;"></div>
+  <div id="item1" class="item" style="background-color: #000;"></div>
+  <div id="item2" class="item" style="background-color: #fff;"></div>
+  <div id="item3" class="item" style="background-color: #fff;"></div>
+  <div id="item4" class="item" style="background-color: #000;"></div>
+  <div id="item5" class="item" style="background-color: #fff;"></div>
+  <div id="item6" class="item" style="background-color: #000;"></div>
+  <div id="item7" class="item" style="background-color: #fff;"></div>
+  <div id="item8" class="item" style="background-color: #fff;"></div>
+  <div id="item9" class="item" style="background-color: #000;"></div>
+  <div id="item10" class="item" style="background-color: #fff;"></div>
+  <div id="item11" class="item" style="background-color: #000;"></div>
+  <div id="item12" class="item" style="background-color: #000;"></div>
+  <div id="item13" class="item" style="background-color: #000;"></div>
+  <div id="item14" class="item" style="background-color: #000;"></div>
+  <div id="item15" class="item" style="background-color: #000;"></div>
+  <div id="item16" class="item" style="background-color: #000;"></div>
+  <div id="item17" class="item" style="background-color: #fff;"></div>
+  <div id="item18" class="item" style="background-color: #000;"></div>
+  <div id="item19" class="item" style="background-color: #000;"></div>
+  <div id="item20" class="item" style="background-color: #000;"></div>
+  <div id="item21" class="item" style="background-color: #000;"></div>
+  <div id="item22" class="item" style="background-color: #fff;"></div>
+  <div id="item23" class="item" style="background-color: #fff;"></div>
+  <div id="item24" class="item" style="background-color: #000;"></div>
+  </div>
+  <div id="column17" class="column" style="left: 1350px; top: 36px;">
+  <div id="item0" class="item" style="background-color: #000;"></div>
+  <div id="item1" class="item" style="background-color: #fff;"></div>
+  <div id="item2" class="item" style="background-color: #000;"></div>
+  <div id="item3" class="item" style="background-color: #000;"></div>
+  <div id="item4" class="item" style="background-color: #000;"></div>
+  <div id="item5" class="item" style="background-color: #fff;"></div>
+  <div id="item6" class="item" style="background-color: #000;"></div>
+  <div id="item7" class="item" style="background-color: #fff;"></div>
+  <div id="item8" class="item" style="background-color: #fff;"></div>
+  <div id="item9" class="item" style="background-color: #000;"></div>
+  <div id="item10" class="item" style="background-color: #000;"></div>
+  <div id="item11" class="item" style="background-color: #000;"></div>
+  <div id="item12" class="item" style="background-color: #fff;"></div>
+  <div id="item13" class="item" style="background-color: #fff;"></div>
+  <div id="item14" class="item" style="background-color: #fff;"></div>
+  <div id="item15" class="item" style="background-color: #fff;"></div>
+  <div id="item16" class="item" style="background-color: #fff;"></div>
+  <div id="item17" class="item" style="background-color: #fff;"></div>
+  <div id="item18" class="item" style="background-color: #000;"></div>
+  <div id="item19" class="item" style="background-color: #fff;"></div>
+  <div id="item20" class="item" style="background-color: #000;"></div>
+  <div id="item21" class="item" style="background-color: #000;"></div>
+  <div id="item22" class="item" style="background-color: #000;"></div>
+  <div id="item23" class="item" style="background-color: #fff;"></div>
+  <div id="item24" class="item" style="background-color: #000;"></div>
+  </div>
+  <div id="column18" class="column" style="left: 1368px; top: 36px;">
+  <div id="item0" class="item" style="background-color: #fff;"></div>
+  <div id="item1" class="item" style="background-color: #fff;"></div>
+  <div id="item2" class="item" style="background-color: #000;"></div>
+  <div id="item3" class="item" style="background-color: #000;"></div>
+  <div id="item4" class="item" style="background-color: #fff;"></div>
+  <div id="item5" class="item" style="background-color: #fff;"></div>
+  <div id="item6" class="item" style="background-color: #fff;"></div>
+  <div id="item7" class="item" style="background-color: #fff;"></div>
+  <div id="item8" class="item" style="background-color: #fff;"></div>
+  <div id="item9" class="item" style="background-color: #000;"></div>
+  <div id="item10" class="item" style="background-color: #fff;"></div>
+  <div id="item11" class="item" style="background-color: #000;"></div>
+  <div id="item12" class="item" style="background-color: #000;"></div>
+  <div id="item13" class="item" style="background-color: #fff;"></div>
+  <div id="item14" class="item" style="background-color: #fff;"></div>
+  <div id="item15" class="item" style="background-color: #000;"></div>
+  <div id="item16" class="item" style="background-color: #fff;"></div>
+  <div id="item17" class="item" style="background-color: #fff;"></div>
+  <div id="item18" class="item" style="background-color: #000;"></div>
+  <div id="item19" class="item" style="background-color: #fff;"></div>
+  <div id="item20" class="item" style="background-color: #fff;"></div>
+  <div id="item21" class="item" style="background-color: #000;"></div>
+  <div id="item22" class="item" style="background-color: #000;"></div>
+  <div id="item23" class="item" style="background-color: #fff;"></div>
+  <div id="item24" class="item" style="background-color: #fff;"></div>
+  </div>
+  <div id="column19" class="column" style="left: 1386px; top: 36px;">
+  <div id="item0" class="item" style="background-color: #fff;"></div>
+  <div id="item1" class="item" style="background-color: #fff;"></div>
+  <div id="item2" class="item" style="background-color: #fff;"></div>
+  <div id="item3" class="item" style="background-color: #000;"></div>
+  <div id="item4" class="item" style="background-color: #fff;"></div>
+  <div id="item5" class="item" style="background-color: #000;"></div>
+  <div id="item6" class="item" style="background-color: #000;"></div>
+  <div id="item7" class="item" style="background-color: #fff;"></div>
+  <div id="item8" class="item" style="background-color: #000;"></div>
+  <div id="item9" class="item" style="background-color: #fff;"></div>
+  <div id="item10" class="item" style="background-color: #fff;"></div>
+  <div id="item11" class="item" style="background-color: #000;"></div>
+  <div id="item12" class="item" style="background-color: #fff;"></div>
+  <div id="item13" class="item" style="background-color: #000;"></div>
+  <div id="item14" class="item" style="background-color: #000;"></div>
+  <div id="item15" class="item" style="background-color: #fff;"></div>
+  <div id="item16" class="item" style="background-color: #fff;"></div>
+  <div id="item17" class="item" style="background-color: #000;"></div>
+  <div id="item18" class="item" style="background-color: #fff;"></div>
+  <div id="item19" class="item" style="background-color: #fff;"></div>
+  <div id="item20" class="item" style="background-color: #fff;"></div>
+  <div id="item21" class="item" style="background-color: #000;"></div>
+  <div id="item22" class="item" style="background-color: #000;"></div>
+  <div id="item23" class="item" style="background-color: #fff;"></div>
+  <div id="item24" class="item" style="background-color: #000;"></div>
+  </div>
+  <div id="column20" class="column" style="left: 1404px; top: 36px;">
+  <div id="item0" class="item" style="background-color: #000;"></div>
+  <div id="item1" class="item" style="background-color: #fff;"></div>
+  <div id="item2" class="item" style="background-color: #000;"></div>
+  <div id="item3" class="item" style="background-color: #000;"></div>
+  <div id="item4" class="item" style="background-color: #000;"></div>
+  <div id="item5" class="item" style="background-color: #fff;"></div>
+  <div id="item6" class="item" style="background-color: #000;"></div>
+  <div id="item7" class="item" style="background-color: #fff;"></div>
+  <div id="item8" class="item" style="background-color: #fff;"></div>
+  <div id="item9" class="item" style="background-color: #000;"></div>
+  <div id="item10" class="item" style="background-color: #000;"></div>
+  <div id="item11" class="item" style="background-color: #000;"></div>
+  <div id="item12" class="item" style="background-color: #fff;"></div>
+  <div id="item13" class="item" style="background-color: #000;"></div>
+  <div id="item14" class="item" style="background-color: #000;"></div>
+  <div id="item15" class="item" style="background-color: #000;"></div>
+  <div id="item16" class="item" style="background-color: #fff;"></div>
+  <div id="item17" class="item" style="background-color: #fff;"></div>
+  <div id="item18" class="item" style="background-color: #000;"></div>
+  <div id="item19" class="item" style="background-color: #fff;"></div>
+  <div id="item20" class="item" style="background-color: #000;"></div>
+  <div id="item21" class="item" style="background-color: #000;"></div>
+  <div id="item22" class="item" style="background-color: #000;"></div>
+  <div id="item23" class="item" style="background-color: #fff;"></div>
+  <div id="item24" class="item" style="background-color: #000;"></div>
+  </div>
+  <div id="column21" class="column" style="left: 1422px; top: 36px;">
+  <div id="item0" class="item" style="background-color: #000;"></div>
+  <div id="item1" class="item" style="background-color: #fff;"></div>
+  <div id="item2" class="item" style="background-color: #000;"></div>
+  <div id="item3" class="item" style="background-color: #000;"></div>
+  <div id="item4" class="item" style="background-color: #000;"></div>
+  <div id="item5" class="item" style="background-color: #fff;"></div>
+  <div id="item6" class="item" style="background-color: #000;"></div>
+  <div id="item7" class="item" style="background-color: #fff;"></div>
+  <div id="item8" class="item" style="background-color: #fff;"></div>
+  <div id="item9" class="item" style="background-color: #fff;"></div>
+  <div id="item10" class="item" style="background-color: #000;"></div>
+  <div id="item11" class="item" style="background-color: #000;"></div>
+  <div id="item12" class="item" style="background-color: #fff;"></div>
+  <div id="item13" class="item" style="background-color: #fff;"></div>
+  <div id="item14" class="item" style="background-color: #000;"></div>
+  <div id="item15" class="item" style="background-color: #000;"></div>
+  <div id="item16" class="item" style="background-color: #000;"></div>
+  <div id="item17" class="item" style="background-color: #000;"></div>
+  <div id="item18" class="item" style="background-color: #000;"></div>
+  <div id="item19" class="item" style="background-color: #000;"></div>
+  <div id="item20" class="item" style="background-color: #000;"></div>
+  <div id="item21" class="item" style="background-color: #000;"></div>
+  <div id="item22" class="item" style="background-color: #000;"></div>
+  <div id="item23" class="item" style="background-color: #000;"></div>
+  <div id="item24" class="item" style="background-color: #000;"></div>
+  </div>
+  <div id="column22" class="column" style="left: 1440px; top: 36px;">
+  <div id="item0" class="item" style="background-color: #000;"></div>
+  <div id="item1" class="item" style="background-color: #fff;"></div>
+  <div id="item2" class="item" style="background-color: #000;"></div>
+  <div id="item3" class="item" style="background-color: #000;"></div>
+  <div id="item4" class="item" style="background-color: #000;"></div>
+  <div id="item5" class="item" style="background-color: #fff;"></div>
+  <div id="item6" class="item" style="background-color: #000;"></div>
+  <div id="item7" class="item" style="background-color: #fff;"></div>
+  <div id="item8" class="item" style="background-color: #000;"></div>
+  <div id="item9" class="item" style="background-color: #000;"></div>
+  <div id="item10" class="item" style="background-color: #fff;"></div>
+  <div id="item11" class="item" style="background-color: #fff;"></div>
+  <div id="item12" class="item" style="background-color: #000;"></div>
+  <div id="item13" class="item" style="background-color: #fff;"></div>
+  <div id="item14" class="item" style="background-color: #000;"></div>
+  <div id="item15" class="item" style="background-color: #fff;"></div>
+  <div id="item16" class="item" style="background-color: #fff;"></div>
+  <div id="item17" class="item" style="background-color: #fff;"></div>
+  <div id="item18" class="item" style="background-color: #000;"></div>
+  <div id="item19" class="item" style="background-color: #fff;"></div>
+  <div id="item20" class="item" style="background-color: #000;"></div>
+  <div id="item21" class="item" style="background-color: #000;"></div>
+  <div id="item22" class="item" style="background-color: #000;"></div>
+  <div id="item23" class="item" style="background-color: #fff;"></div>
+  <div id="item24" class="item" style="background-color: #000;"></div>
+  </div>
+  <div id="column23" class="column" style="left: 1458px; top: 36px;">
+  <div id="item0" class="item" style="background-color: #000;"></div>
+  <div id="item1" class="item" style="background-color: #000;"></div>
+  <div id="item2" class="item" style="background-color: #000;"></div>
+  <div id="item3" class="item" style="background-color: #000;"></div>
+  <div id="item4" class="item" style="background-color: #000;"></div>
+  <div id="item5" class="item" style="background-color: #000;"></div>
+  <div id="item6" class="item" style="background-color: #000;"></div>
+  <div id="item7" class="item" style="background-color: #fff;"></div>
+  <div id="item8" class="item" style="background-color: #fff;"></div>
+  <div id="item9" class="item" style="background-color: #000;"></div>
+  <div id="item10" class="item" style="background-color: #000;"></div>
+  <div id="item11" class="item" style="background-color: #fff;"></div>
+  <div id="item12" class="item" style="background-color: #000;"></div>
+  <div id="item13" class="item" style="background-color: #000;"></div>
+  <div id="item14" class="item" style="background-color: #fff;"></div>
+  <div id="item15" class="item" style="background-color: #fff;"></div>
+  <div id="item16" class="item" style="background-color: #000;"></div>
+  <div id="item17" class="item" style="background-color: #fff;"></div>
+  <div id="item18" class="item" style="background-color: #000;"></div>
+  <div id="item19" class="item" style="background-color: #fff;"></div>
+  <div id="item20" class="item" style="background-color: #000;"></div>
+  <div id="item21" class="item" style="background-color: #fff;"></div>
+  <div id="item22" class="item" style="background-color: #fff;"></div>
+  <div id="item23" class="item" style="background-color: #fff;"></div>
+  <div id="item24" class="item" style="background-color: #fff;"></div>
+  </div>
+  <div id="column24" class="column" style="left: 1476px; top: 36px;">
+  <div id="item0" class="item" style="background-color: #000;"></div>
+  <div id="item1" class="item" style="background-color: #000;"></div>
+  <div id="item2" class="item" style="background-color: #000;"></div>
+  <div id="item3" class="item" style="background-color: #000;"></div>
+  <div id="item4" class="item" style="background-color: #000;"></div>
+  <div id="item5" class="item" style="background-color: #000;"></div>
+  <div id="item6" class="item" style="background-color: #000;"></div>
+  <div id="item7" class="item" style="background-color: #fff;"></div>
+  <div id="item8" class="item" style="background-color: #000;"></div>
+  <div id="item9" class="item" style="background-color: #fff;"></div>
+  <div id="item10" class="item" style="background-color: #000;"></div>
+  <div id="item11" class="item" style="background-color: #fff;"></div>
+  <div id="item12" class="item" style="background-color: #000;"></div>
+  <div id="item13" class="item" style="background-color: #fff;"></div>
+  <div id="item14" class="item" style="background-color: #000;"></div>
+  <div id="item15" class="item" style="background-color: #fff;"></div>
+  <div id="item16" class="item" style="background-color: #000;"></div>
+  <div id="item17" class="item" style="background-color: #fff;"></div>
+  <div id="item18" class="item" style="background-color: #000;"></div>
+  <div id="item19" class="item" style="background-color: #000;"></div>
+  <div id="item20" class="item" style="background-color: #000;"></div>
+  <div id="item21" class="item" style="background-color: #000;"></div>
+  <div id="item22" class="item" style="background-color: #000;"></div>
+  <div id="item23" class="item" style="background-color: #000;"></div>
+  <div id="item24" class="item" style="background-color: #000;"></div>
+  </div>
+
+<div style="background-color: rgba(0,0,0,0.5); position: absolute; z-index: 3; width: 100vw; height: 100vh; display: flex; justify-content: center; align-items: center;" id="screen">
+<div style="background-color: #fff; padding: 2em; position: absolute; z-index: 4; box-shadow: 0px 0px 15px #000; text-align: center;">
+    Dag schatje!<br>
+    <span style="font-weight: bold;">Gelukkige verjaardag!</span><br>
+    Om je cadeautje te krijgen, moet je puzzelen.<br>
+    <br>
+    Je doel is om de QR-code te ontdekken.<br>
+    Links (←) vind je de rijen van deze code.<br>
+    Rechts (→) vind je de kolommen.<br>
+    In het midden puzzel je deze samen.<br>
+    Als start-hints zijn de typische vakjes al ingevuld.<br>
+    Gebruik je muis voor het puzzelen.<br>
+    <br>
+    <em>Klik om te starten.</em>
+</div>
+</div>
+
+
+<script type="text/javascript">
+var firsttime = true;
+
+for(var i=0; i<25; ++i) {
+  var ri = document.getElementById("row" + i);
+  var ci = document.getElementById("column" + i);
+  var prefixr = "position_row_" + i;
+  var prefixc = "position_col_" + i;
+  dragElement(ri, prefixr);
+  dragElement(ci, prefixc);
+
+  var prit = localStorage.getItem(prefixr + "_top");
+  var pril = localStorage.getItem(prefixr + "_left");
+  var pcit = localStorage.getItem(prefixc + "_top");
+  var pcil = localStorage.getItem(prefixc + "_left");
+
+  if(prit) {
+    ri.style.top = prit;
+    firsttime = false;
+  } else {
+    localStorage.setItem(prefixr + "_top", ri.style.top);
+  }
+  if(pril) {
+    ri.style.left = pril;
+    firsttime = false;
+  } else {
+    localStorage.setItem(prefixr + "_left", ri.style.left);
+  }
+  if(pcit) {
+    ci.style.top = pcit;
+    firsttime = false;
+  } else {
+    localStorage.setItem(prefixc + "_top", ci.style.top);
+  }
+  if(pcil) {
+    ci.style.left = pcil;
+    firsttime = false;
+  } else {
+    localStorage.setItem(prefixc + "_left", ci.style.left);
+  }
+}
+
+function dragElement(elmnt, prefix) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  elmnt.onmousedown = dragMouseDown;
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    document.onmousemove = elementDrag;
+    elmnt.style.borderWidth = '1px';
+    elmnt.style.opacity = '0.5';
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+    elmnt.style.zIndex = 2;
+  }
+
+  function closeDragElement() {
+    document.onmouseup = null;
+    document.onmousemove = null;
+    var top = (elmnt.offsetTop - pos2);
+    var left = (elmnt.offsetLeft - pos1);
+    top -= ((top + 9) % 18) - 9;
+    left -= ((left + 9) % 18) - 9;
+    elmnt.style.top = top + "px";
+    elmnt.style.left = left + "px";
+    elmnt.style.borderWidth = '0px';
+    elmnt.style.opacity = '1';
+    elmnt.style.zIndex = 1;
+
+    localStorage.setItem(prefix + "_top", elmnt.style.top);
+    localStorage.setItem(prefix + "_left", elmnt.style.left);
+  }
+}
+
+if(!firsttime) {
+  document.getElementById('screen').remove();
+} else {
+  document.getElementById('screen').addEventListener('click', function() {
+    document.getElementById('screen').remove();
+  });
+}
+
+function reset() {
+  localStorage.clear();
+  location.reload();
+}
+
+</script>
+
+</body>
+
+</html>
